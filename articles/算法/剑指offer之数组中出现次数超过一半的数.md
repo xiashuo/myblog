@@ -1,0 +1,47 @@
+<div class="blog-article">
+    <h1><a href="p.html?p=算法/剑指offer之数组中出现次数超过一半的数" class="title">剑指offer之数组中出现次数超过一半的数</a></h1>
+    <span class="author">xiashuobad</span>
+    <span class="time">2018-07-03 02:45</span>
+    <span><a href="tags.html?t=算法" class="tag">算法</a></span>
+    </div>
+<br/>
+
+## 题目描述 ##
+数组中有一个数字出现的次数超过数组长度的一半，请找出这个数字。例如输入一个长度为9的数组{1,2,3,2,2,2,5,4,2}。由于数字2在数组中出现了5次，超过数组长度的一半，因此输出2。如果不存在则输出0。
+## 思路 ##
+1. 这道题我的第一想法是先排序，如果存在次数超过数组长度一半的元素，则必定为排序后最中间的元素的值。
+2. 但是上面的做法并不是正解，因为用到了排序，复杂度为nlogn
+3. 正解应该是o(n)，这个方法很巧妙。
+4. 如果有符合条件的数字，则它出现的次数比其他所有数字出现的次数和还要多。
+5. 在遍历数组时保存两个值：一是数组中一个数字，一是次数。遍历下一个数字时，若它与之前保存的数字相同，则次数加1，否则次数减1；若次数为0，则保存下一个数字，并将次数置为1。
+6. 遍历结束后，所保存的数字即为所求。然后再判断它是否符合条件即可。
+
+## python实现 ##
+
+	# -*- coding:utf-8 -*-
+	class Solution:
+	    #非正解
+	    def MoreThanHalfNum_Solution(self,numbers):
+	        n=len(numbers)
+	        numbers.sort()
+	        res=numbers[n/2]
+	        count=numbers.count(res)
+	        if count*2>n:
+	            return res
+	        else:return 0
+	    #O(n)解法
+	    def MoreThanHalfNum_Solution(self,numbers):
+	        res=numbers[0]
+	        n=len(numbers)
+	        count=1
+	        for i in range(1,n):
+	            if numbers[i]==res:
+	                count +=1
+	            else:count -=1
+	            if count==0:
+	                count=1
+	                res=numbers[i]
+	        count=numbers.count(res)
+	        if count*2>n:
+	            return res
+	        else:return 0

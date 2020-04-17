@@ -1,0 +1,32 @@
+{
+    "blog_name": "把灯瞎说",
+    "blog_author": "xiashuobad",
+    "blog_description": "你的孤独 虽败犹荣",
+    "meta_description": " 静态Blog",
+    "meta_keywords":"博客,blog,静态博客,安装,教程,搭建,部署",
+    "profile_image":"assets/images/touxiang.jpg",
+
+    "nav": [
+        {
+            "ico": "home",
+            "text": "博客主页",
+            "url": "index.html"
+        },
+        {
+            "ico": "archive",
+            "text": "文章归档",
+            "url": "archives.html"
+        },
+        {
+            "ico": "tags",
+            "text": "分类标签",
+            "url": "tags.html"
+        },
+        {
+            "ico": "user",
+            "text": "关于",
+            "url": "p.html?p=\\未分类\\aboutme"
+        }
+    ],
+    "blog_list":5
+}
