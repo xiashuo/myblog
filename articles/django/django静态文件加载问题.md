@@ -30,7 +30,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 ```
 > 而且注意`STATICFILES_DIRS `关键字不能写错。
 
-5. html页面中，需要先导入`static`，使用`{% static 'polls/style.css' %}`
+5. html页面中，需要先导入‘static‘，使用`{% static 'polls/style.css' %}`
 
 ```html
 {% load static %}
