@@ -32,7 +32,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 
 5. html页面中，导入静态文件
 
-```html
+```
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
 ```
