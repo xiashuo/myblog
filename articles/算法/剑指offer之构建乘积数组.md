@@ -16,7 +16,7 @@ B[i]的值可以看作下图的矩阵中每行的乘积。
 
 因此我们的思路就很清晰了，先算下三角中的连乘，即我们先算出B[i]中的一部分，然后倒过来按上三角中的分布规律，把另一部分也乘进去。
 
-![](http://www.xsblog.club/assets/images/2018/07/3uqes6ala8jt3rk47mrva1ev5t.jpg)
+![](assets/images/2018/07/3uqes6ala8jt3rk47mrva1ev5t.jpg)
 
 ## python实现 ##
 	class Solution:

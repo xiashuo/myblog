@@ -168,7 +168,7 @@ def edit_mds(dir=ARTICLES_DIR):
                 with open(file, "r", encoding="utf-8") as f1, open("%s.bak" % file, "w", encoding="utf-8") as f2:
 
                     for line in f1:
-                        new_line=re.sub('http://xsblog.club/','',line)
+                        new_line=re.sub('http://www.xsblog.club/','',line)
                         f2.write(new_line)
                 os.remove(file)
                 os.rename("%s.bak" % file, file)
@@ -209,5 +209,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
-    # edit_mds()
+    # main()
+    edit_mds()

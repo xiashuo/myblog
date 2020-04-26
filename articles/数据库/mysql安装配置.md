@@ -11,9 +11,9 @@
 ### 下载与安装
 从网上下载MySQL，我这里用的是zip版，版本为 8.0.13，也可以使用安装版msi，[下载地址](https://dev.mysql.com/downloads/mysql/)
 
-![](http://www.xsblog.club/assets/images/2018/12/437re1qe50jg8rndrioa5alk0e.png)
+![](assets/images/2018/12/437re1qe50jg8rndrioa5alk0e.png)
 
-![](http://www.xsblog.club/assets/images/2018/12/rl0d0bjucggdqr03fc381cm5va.png)
+![](assets/images/2018/12/rl0d0bjucggdqr03fc381cm5va.png)
 
 ### 解压下载的压缩包 
 根据自己需要解压到相应位置，我的位置为 `D:\programming\mysql-8.0.13-winx64`
@@ -75,7 +75,7 @@ default-character-set=utf8
 
 全部过程如下图：
 
-![](http://www.xsblog.club/assets/images/2018/12/209dgb99p8glrpk27r6638s299.png)
+![](assets/images/2018/12/209dgb99p8glrpk27r6638s299.png)
 
 ## Navicat安装 ##
 ### Navicat11.2.15 下载安装 ###
@@ -85,8 +85,8 @@ default-character-set=utf8
 
  将工具放在安装目录下运行即可。
 ### 连接数据库 ###
-![](http://www.xsblog.club/assets/images/2018/12/51222u6u0qhibqdrak5vl2aab7.png)
+![](assets/images/2018/12/51222u6u0qhibqdrak5vl2aab7.png)
 
-![](http://www.xsblog.club/assets/images/2018/12/sfbpeekmg2h97q6kbrqv8avqvv.png)
+![](assets/images/2018/12/sfbpeekmg2h97q6kbrqv8avqvv.png)
 
-![](http://www.xsblog.club/assets/images/2018/12/quf618cu2ggiaqtse7261oia5q.png)
+![](assets/images/2018/12/quf618cu2ggiaqtse7261oia5q.png)

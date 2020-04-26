@@ -128,7 +128,7 @@ Sigmoid函数的输入记为z，由下面公式得出：
 	plotBestFit(weights)
 **结果：**
 
-![](http://www.xsblog.club/assets/images/2017/09/tgctfahpsiil6rph0sc5dueuhh.png)
+![](assets/images/2017/09/tgctfahpsiil6rph0sc5dueuhh.png)
 
 　　改进后的随机梯度上升法，分类效果和之前差不多，但是所使用的计算量更少。
 ## 示例：从疝气病症预测病马的死亡率 ##
