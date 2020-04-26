@@ -9,9 +9,9 @@
 最近使用谷歌应用商店下载插件时才发现这个问题，刚开始以为只是谷歌插件下载不了。因为这个问题之前也遇到过，是代理的问题，
 把SSR代理设置成全局就ok了。试了很久发现没有用，后面发现不是这个问题，所有下载都失败。
 
-![alt](http://www.xsblog.club/assets/images/2018/12/580qvp0o4mgi9o6g2pl65ecq8b.jpg)
+![alt](assets/images/2018/12/580qvp0o4mgi9o6g2pl65ecq8b.jpg)
 
-![alt](http://www.xsblog.club/assets/images/2018/12/uu6b925qccj0jpr087el5da770.jpg)
+![alt](assets/images/2018/12/uu6b925qccj0jpr087el5da770.jpg)
 
 这是个但蛋疼的问题，下载完成之后你给提示失败，而且文件都被删除了，难受的一批，试了很多网上的办法都没用，重启系统了也还是没用。后来再搜，
 终于找到解决方案了：

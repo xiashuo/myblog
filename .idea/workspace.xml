@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="db86a571-e9e4-4e24-b040-2aad7ff4bfc2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/blog_data.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,6 +142,9 @@
       <workItem from="1584502916197" duration="609000" />
       <workItem from="1587021779943" duration="1221000" />
       <workItem from="1587107747966" duration="1525000" />
+      <workItem from="1587123561443" duration="684000" />
+      <workItem from="1587210211222" duration="778000" />
+      <workItem from="1587386460482" duration="26000" />
     </task>
     <task id="LOCAL-00001" summary="迁移了一部分文章，并修改了部分代码">
       <created>1582722217033</created>
