@@ -18,7 +18,8 @@
 > 返回True。直到i或者j有一个越界时停止循环。
 
 ## python2.7实现 ##
-'''python
+
+```python
 # -*- coding:utf-8 -*-
 class Solution:
     # array 二维列表
@@ -33,4 +34,4 @@ class Solution:
             else:
                 return True
         return False
-'''
+```
