@@ -3,19 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="db86a571-e9e4-4e24-b040-2aad7ff4bfc2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/articles/未分类/aboutme.md" beforeDir="false" afterPath="$PROJECT_DIR$/articles/未分类/aboutme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/articles/机器学习/机器学习之Logistic回归.md" beforeDir="false" afterPath="$PROJECT_DIR$/articles/机器学习/机器学习之Logistic回归.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/articles/机器学习/机器学习之决策树.md" beforeDir="false" afterPath="$PROJECT_DIR$/articles/机器学习/机器学习之决策树.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/articles/机器学习/机器学习之朴素贝叶斯.md" beforeDir="false" afterPath="$PROJECT_DIR$/articles/机器学习/机器学习之朴素贝叶斯.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/2017/09/1ddiud50b2joroktjj335glggp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/2017/09/4r18ssl6h6isbqruaik139timf.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/2017/09/o7madrl25mhqjpgah9qoed2re9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/2017/09/pcs9ttnetsjmkruj62as09l8s0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/2017/09/ppb3nqa2jcg0irqpuaris580gn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/2017/09/qaoredokf4ip8rnca2becr32cp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/2017/09/vh3nrqe936g1uo0ssijuli60n7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/p.html" beforeDir="false" afterPath="$PROJECT_DIR$/p.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mytab/常用.txt" beforeDir="false" afterPath="$PROJECT_DIR$/mytab/常用.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +146,8 @@
       <workItem from="1587210211222" duration="778000" />
       <workItem from="1587386460482" duration="26000" />
       <workItem from="1587889969854" duration="6768000" />
-      <workItem from="1587949635301" duration="8331000" />
+      <workItem from="1587949635301" duration="8904000" />
+      <workItem from="1588083881094" duration="608000" />
     </task>
     <task id="LOCAL-00001" summary="迁移了一部分文章，并修改了部分代码">
       <created>1582722217033</created>

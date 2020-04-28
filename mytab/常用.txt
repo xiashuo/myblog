@@ -1,5 +1,4 @@
-﻿
-vultr：45.32.1.91
+﻿vultr：45.32.1.91
 e2$PTJw_*=e3H.N1
 开机自启配置文件：/etc/rc.d/rc.local
 *************************************
@@ -73,7 +72,10 @@ fdsfdsfdsfdsfdsg    xs135456
 316835868@qq.com
 Lyl123...
 ********************************************
-
+code.tarena.com.cn
+账号：tarenacode
+密码：code_2013
+地址： AIDCode/aid2004/01_month01/to_student_for_month01.zip
 
 
 
