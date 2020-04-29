@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="db86a571-e9e4-4e24-b040-2aad7ff4bfc2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/articles/算法/剑指offer之二维数组中的查找.md" beforeDir="false" afterPath="$PROJECT_DIR$/articles/算法/1剑指offer之二维数组中的查找.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/articles/算法/剑指offer之替换空格.md" beforeDir="false" afterPath="$PROJECT_DIR$/articles/算法/2剑指offer之替换空格.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/articles/算法/剑指offer之从尾到头打印链表.md" beforeDir="false" afterPath="$PROJECT_DIR$/articles/算法/3剑指offer之从尾到头打印链表.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +149,7 @@
       <workItem from="1587949635301" duration="8904000" />
       <workItem from="1588083881094" duration="608000" />
       <workItem from="1588087959459" duration="1157000" />
-      <workItem from="1588143758077" duration="619000" />
+      <workItem from="1588143758077" duration="2007000" />
     </task>
     <task id="LOCAL-00001" summary="迁移了一部分文章，并修改了部分代码">
       <created>1582722217033</created>
