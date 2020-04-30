@@ -209,5 +209,5 @@ def main():
 
 
 if __name__ == "__main__":
-    # main()
-    edit_mds()
+    main()
+    # edit_mds()
