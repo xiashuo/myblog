@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db86a571-e9e4-4e24-b040-2aad7ff4bfc2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/articles/算法/6剑指offer之旋转数组的最小数字.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/articles/算法/剑指offer之旋转数组的最小数字.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/articles/算法/剑指offer之斐波拉契数列.md" beforeDir="false" afterPath="$PROJECT_DIR$/articles/算法/7剑指offer之斐波拉契数列.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/blog_data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +75,29 @@
       <recent name="D:\programing\PythonProjects\suiyan\articles\刷机" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.test">
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="suiyan" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="z" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="suiyan" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -100,6 +122,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.z" />
       </list>
     </recent_temporary>
@@ -154,7 +177,8 @@
       <workItem from="1588087959459" duration="1157000" />
       <workItem from="1588143758077" duration="4451000" />
       <workItem from="1588174141289" duration="1529000" />
-      <workItem from="1588519751771" duration="2126000" />
+      <workItem from="1588519751771" duration="2812000" />
+      <workItem from="1588564828771" duration="10729000" />
     </task>
     <task id="LOCAL-00001" summary="迁移了一部分文章，并修改了部分代码">
       <created>1582722217033</created>
@@ -202,38 +226,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="111" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1583137393931" />
-    <state width="1483" height="197" key="GridCell.Tab.0.bottom" timestamp="1587922202751">
+    <state width="1483" height="197" key="GridCell.Tab.0.bottom" timestamp="1588607855254">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="197" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587922202751" />
-    <state width="1483" height="197" key="GridCell.Tab.0.center" timestamp="1587922202751">
+    <state width="1483" height="197" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588607855254" />
+    <state width="1483" height="197" key="GridCell.Tab.0.center" timestamp="1588607855254">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="197" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587922202751" />
-    <state width="1483" height="197" key="GridCell.Tab.0.left" timestamp="1587922202751">
+    <state width="1483" height="197" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588607855254" />
+    <state width="1483" height="197" key="GridCell.Tab.0.left" timestamp="1588607855253">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="197" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587922202751" />
-    <state width="1483" height="197" key="GridCell.Tab.0.right" timestamp="1587922202751">
+    <state width="1483" height="197" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588607855253" />
+    <state width="1483" height="197" key="GridCell.Tab.0.right" timestamp="1588607855254">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="197" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587922202751" />
-    <state width="1483" height="190" key="GridCell.Tab.1.bottom" timestamp="1582906166067">
+    <state width="1483" height="197" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588607855254" />
+    <state width="1483" height="190" key="GridCell.Tab.1.bottom" timestamp="1588605332063">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="190" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1582906166067" />
-    <state width="1483" height="190" key="GridCell.Tab.1.center" timestamp="1582906166067">
+    <state width="1483" height="190" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588605332063" />
+    <state width="1483" height="190" key="GridCell.Tab.1.center" timestamp="1588605332063">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="190" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1582906166067" />
-    <state width="1483" height="190" key="GridCell.Tab.1.left" timestamp="1582906166067">
+    <state width="1483" height="190" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1588605332063" />
+    <state width="1483" height="190" key="GridCell.Tab.1.left" timestamp="1588605332063">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="190" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1582906166067" />
-    <state width="1483" height="190" key="GridCell.Tab.1.right" timestamp="1582906166067">
+    <state width="1483" height="190" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1588605332063" />
+    <state width="1483" height="190" key="GridCell.Tab.1.right" timestamp="1588605332063">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="190" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1582906166067" />
+    <state width="1483" height="190" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1588605332063" />
     <state x="154" y="0" key="SettingsEditor" timestamp="1587910885865">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -275,6 +299,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/suiyan$z.coverage" NAME="z Coverage Results" MODIFIED="1582689419747" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/myblog$test.coverage" NAME="test Coverage Results" MODIFIED="1588607851910" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/myblog$z.coverage" NAME="z Coverage Results" MODIFIED="1587891358077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyBlog$z.coverage" NAME="z Coverage Results" MODIFIED="1583758644437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

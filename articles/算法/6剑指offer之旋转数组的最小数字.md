@@ -1,5 +1,5 @@
 <div class="blog-article">
-    <h1><a href="p.html?p=算法/剑指offer之旋转数组的最小数字" class="title">剑指offer之旋转数组的最小数字</a></h1>
+    <h1><a href="p.html?p=算法/6剑指offer之旋转数组的最小数字" class="title">剑指offer之旋转数组的最小数字</a></h1>
     <span class="author">xiashuobad</span>
     <span class="time">2018-06-21 14:14</span>
     <span><a href="tags.html?t=算法" class="tag">算法</a></span>

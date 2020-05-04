@@ -1,5 +1,5 @@
 <div class="blog-article">
-    <h1><a href="p.html?p=算法/剑指offer之根据前序和中序遍历重建二叉树" class="title">剑指offer之根据前序和中序遍历重建二叉树</a></h1>
+    <h1><a href="p.html?p=算法/4剑指offer之根据前序和中序遍历重建二叉树" class="title">剑指offer之根据前序和中序遍历重建二叉树</a></h1>
     <span class="author">xiashuobad</span>
     <span class="time">2018-06-20 06:36</span>
     <span><a href="tags.html?t=算法" class="tag">算法</a></span>

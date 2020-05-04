@@ -1,5 +1,5 @@
 <div class="blog-article">
-    <h1><a href="p.html?p=算法/剑指offer之从尾到头打印链表" class="title">剑指offer之从尾到头打印链表</a></h1>
+    <h1><a href="p.html?p=算法/3剑指offer之从尾到头打印链表" class="title">剑指offer之从尾到头打印链表</a></h1>
     <span class="author">xiashuobad</span>
     <span class="time">2018-06-20 05:25</span>
     <span><a href="tags.html?t=算法" class="tag">算法</a></span>
