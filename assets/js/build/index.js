@@ -230,6 +230,8 @@ $(document).ready(function () {
                 currentPage: 1, //当前页码
                 prev: '<button type="button" class="prev btn btn-primary">上一页</button>',
                 next: '<button type="button" class="next btn btn-primary">下一页</button>',
+                first: '<button type="button" class="prev btn btn-primary">首页</button>',
+                last: '<button type="button" class="next btn btn-primary">尾页</button>',
                 page: '<button type="button" class="page btn btn-primary">{{page}}/{{totalPages}} </button>',
                 onPageChange: function (n) {
                     $('.data-list').html('');
