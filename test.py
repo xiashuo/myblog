@@ -35,19 +35,35 @@
 n<=39
 '''
 
-class Solution:
-    # def Fibonacci(self, n):
-    #     # write code here
-    #     if n == 0 or n == 1:
-    #         return n
-    #     return self.Fibonacci(n - 1) + self.Fibonacci(n - 2)
-    def Fibonacci(self, n):
-        if n == 0 or n == 1:
-            return n
-        a, b = 0, 1
-        for i in range(2, n + 1):
-            a, b = b, a + b
-        return b
+# class Solution:
+#     # def Fibonacci(self, n):
+#     #     # write code here
+#     #     if n == 0 or n == 1:
+#     #         return n
+#     #     return self.Fibonacci(n - 1) + self.Fibonacci(n - 2)
+#     def Fibonacci(self, n):
+#         if n == 0 or n == 1:
+#             return n
+#         a, b = 0, 1
+#         for i in range(2, n + 1):
+#             a, b = b, a + b
+#         return b
+#
+# so = Solution()
+# print(so.Fibonacci(4))
 
-so = Solution()
-print(so.Fibonacci(4))
+'''
+一只青蛙一次可以跳上1级台阶，也可以跳上2级……它也可以跳上n级。求该青蛙跳上一个n级的台阶总共有多少种跳法。
+'''
+
+
+class Solution:
+    def jumpFloorII(self, number):
+        # write code here
+        # if number == 1:
+        #     return number
+        # a,b=1,1
+        # for i in range(2, number + 1):
+        #     a,b=a+b,a+b
+        # return b
+        return 2 ** (number - 1)
