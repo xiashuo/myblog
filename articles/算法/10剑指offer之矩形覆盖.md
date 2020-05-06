@@ -1,0 +1,31 @@
+<div class="blog-article">
+    <h1><a href="p.html?p=算法/10剑指offer之矩形覆盖" class="title">剑指offer之矩形覆盖</a></h1>
+    <span class="author">xiashuobad</span>
+    <span class="time">2018-06-23 02:43</span>
+    <span><a href="tags.html?t=算法" class="tag">算法</a></span>
+    </div>
+<br/>
+
+## 题目描述 ##
+> 我们可以用2 * 1的小矩形横着或者竖着去覆盖更大的矩形。请问用n个2 * 1的
+>小矩形无重叠地覆盖一个2 * n的大矩形，总共有多少种方法？
+## 思路 ##
+1. n=1时，只能横着放一种情况，即f[1]=1
+2. n=2时，连续横放或者连续竖着放两种情况，f[2]=2
+3. n>=3时，如果第一个横着放，则剩余的2*（n-1）有f[n-1]种；如果竖着放，
+则只能连续竖着放两块，即下一块也必须是竖着的，此时剩余2*（n-2）有f[n-2]种。
+4. 将上面的两种情况相加得,f[n]=f[n-1]+f[n-2],n>=3
+5. 这个式子似曾相识，没错就是斐波拉契数列的递推式，实现起来就容易了。
+
+## python实现 ##
+```python
+# -*- coding:utf-8 -*-
+class Solution:
+    def rectCover(self, number):
+        if number<=2:
+            return number
+        a,b=1,2
+        for _ in range(3,number+1):
+            a,b=b,a+b
+        return b
+```
