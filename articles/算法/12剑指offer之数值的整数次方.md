@@ -1,5 +1,5 @@
 <div class="blog-article">
-    <h1><a href="p.html?p=算法/剑指offer之数值的整数次方" class="title">剑指offer之数值的整数次方</a></h1>
+    <h1><a href="p.html?p=算法/12剑指offer之数值的整数次方" class="title">剑指offer之数值的整数次方</a></h1>
     <span class="author">xiashuobad</span>
     <span class="time">2018-06-24 03:01</span>
     <span><a href="tags.html?t=算法" class="tag">算法</a></span>
@@ -7,7 +7,7 @@
 <br/>
 
 ## 题目描述 ##
-给定一个double类型的浮点数base和int类型的整数exponent。求base的exponent次方。
+> 给定一个double类型的浮点数base和int类型的整数exponent。求base的exponent次方。
 ## 思路1 ##
 1. base的exponent次方，其实就是exponent个base累乘的结果
 2. 所以，只需设置一个变量sum=1，利用循环，每次将sum*base的值赋给sum，一共循环exponent次，最终返回sum。
@@ -21,26 +21,24 @@
 4. 仔细想想，其实上面base的指数的变化过程，实际上反映的就是将n的二进制转换成十进制的过程。
 
 ## python实现 ##
-	# -*- coding:utf-8 -*-
-	class Solution:
-		#思路1
-	    def Power(self, base, exponent):
-	        sum=1
-	        n=exponent
-	        if exponent<0:
-	            n =-exponent
-	        for _ in range(n):
-	            sum *=base
-	        return sum if exponent>0 else 1/sum 
-		#思路2   
-	    def Power2(self, base, exponent):
-	        sum=1
-	        n=exponent
-	        if exponent<0:
-	            n =-exponent
-	        while n:
-	            if n&1:
-	                sum *=base
-	            base *=base
-	            n=n>>1
-	        return sum if exponent>0 else 1/sum
+```python
+# -*- coding:utf-8 -*-
+class Solution:
+    #思路1
+    def Power(self, base, exponent):
+        sum=1
+        n=abs(exponent)
+        for _ in range(n):
+            sum *=base
+        return sum if exponent>0 else 1/sum 
+    #思路2   
+    def Power2(self, base, exponent):
+        sum=1
+        n=abs(exponent)
+        while n:
+            if n&1:
+                sum *=base
+            base *=base
+            n=n>>1
+        return sum if exponent>0 else 1/sum
+```

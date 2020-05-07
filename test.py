@@ -31,20 +31,24 @@
 # print(so.lengthOfLongestSubstring("abcabcbb"))
 
 '''
-输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。
+输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使得所有的奇数位于数组的前半部分，
+所有的偶数位于数组的后半部分，并保证奇数和奇数，偶数和偶数之间的相对位置不变。
 '''
-
-
-# -*- coding:utf-8 -*-
 class Solution:
-    def NumberOf1(self, n):
-        count = 0
-        if n < 0:
-            n = n & 0x7FFFFFFF
-            count += 1
-        while n:
-            # count += 1
-            # n = n & (n - 1)
-            count += n & 1
-            n = n >> 1
-        return count
+    # def reOrderArray(self, array):
+    #     # write code here
+    #     list1,list2=[],[]
+    #     for val in array:
+    #         if val % 2==1:
+    #             list1.append(val)
+    #         else:
+    #             list2.append(val)
+    #     return list1+list2
+    def reOrderArray(self, array):
+        # write code here
+        i=0
+        while i<len(array):
+
+
+so=Solution()
+print(so.reOrderArray([1,2,3,4,5,6]))
