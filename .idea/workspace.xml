@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="db86a571-e9e4-4e24-b040-2aad7ff4bfc2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/articles/算法/剑指offer之数值的整数次方.md" beforeDir="false" afterPath="$PROJECT_DIR$/articles/算法/12剑指offer之数值的整数次方.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/articles/算法/剑指offer之调整数组顺序使奇数位于偶数前面.md" beforeDir="false" afterPath="$PROJECT_DIR$/articles/算法/13剑指offer之调整数组顺序使奇数位于偶数前面.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/blog_data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/articles/算法/剑指offer之链表中的倒数第k个节点.md" beforeDir="false" afterPath="$PROJECT_DIR$/articles/算法/14剑指offer之链表中的倒数第k个节点.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -185,7 +183,8 @@
       <workItem from="1588778042128" duration="5571000" />
       <workItem from="1588822223180" duration="918000" />
       <workItem from="1588852663585" duration="607000" />
-      <workItem from="1588858100073" duration="6576000" />
+      <workItem from="1588858100073" duration="8571000" />
+      <workItem from="1589196512999" duration="3066000" />
     </task>
     <task id="LOCAL-00001" summary="迁移了一部分文章，并修改了部分代码">
       <created>1582722217033</created>
@@ -233,38 +232,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="111" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1588746413775" />
-    <state width="1483" height="197" key="GridCell.Tab.0.bottom" timestamp="1588864057335">
+    <state width="1483" height="190" key="GridCell.Tab.0.bottom" timestamp="1588866889979">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="197" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588864057335" />
-    <state width="1483" height="197" key="GridCell.Tab.0.center" timestamp="1588864057333">
+    <state width="1483" height="190" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588866889979" />
+    <state width="1483" height="190" key="GridCell.Tab.0.center" timestamp="1588866889978">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="197" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588864057333" />
-    <state width="1483" height="197" key="GridCell.Tab.0.left" timestamp="1588864057333">
+    <state width="1483" height="190" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588866889978" />
+    <state width="1483" height="190" key="GridCell.Tab.0.left" timestamp="1588866889978">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="197" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588864057333" />
-    <state width="1483" height="197" key="GridCell.Tab.0.right" timestamp="1588864057334">
+    <state width="1483" height="190" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588866889978" />
+    <state width="1483" height="190" key="GridCell.Tab.0.right" timestamp="1588866889979">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="197" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588864057334" />
-    <state width="1483" height="190" key="GridCell.Tab.1.bottom" timestamp="1588863956311">
+    <state width="1483" height="190" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588866889979" />
+    <state width="1483" height="190" key="GridCell.Tab.1.bottom" timestamp="1588866889979">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="190" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588863956311" />
-    <state width="1483" height="190" key="GridCell.Tab.1.center" timestamp="1588863956310">
+    <state width="1483" height="190" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588866889979" />
+    <state width="1483" height="190" key="GridCell.Tab.1.center" timestamp="1588866889979">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="190" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1588863956310" />
-    <state width="1483" height="190" key="GridCell.Tab.1.left" timestamp="1588863956310">
+    <state width="1483" height="190" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1588866889979" />
+    <state width="1483" height="190" key="GridCell.Tab.1.left" timestamp="1588866889979">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="190" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1588863956310" />
-    <state width="1483" height="190" key="GridCell.Tab.1.right" timestamp="1588863956310">
+    <state width="1483" height="190" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1588866889979" />
+    <state width="1483" height="190" key="GridCell.Tab.1.right" timestamp="1588866889979">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="190" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1588863956310" />
+    <state width="1483" height="190" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1588866889979" />
     <state x="154" y="0" key="SettingsEditor" timestamp="1587910885865">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -300,11 +299,6 @@
           <url>file://$PROJECT_DIR$/z.py</url>
           <line>162</line>
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test.py</url>
-          <line>40</line>
-          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

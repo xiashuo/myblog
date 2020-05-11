@@ -31,24 +31,22 @@
 # print(so.lengthOfLongestSubstring("abcabcbb"))
 
 '''
-输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使得所有的奇数位于数组的前半部分，
-所有的偶数位于数组的后半部分，并保证奇数和奇数，偶数和偶数之间的相对位置不变。
+输入一个链表，输出该链表中倒数第k个结点。
 '''
+
+
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+
 class Solution:
-    # def reOrderArray(self, array):
-    #     # write code here
-    #     list1,list2=[],[]
-    #     for val in array:
-    #         if val % 2==1:
-    #             list1.append(val)
-    #         else:
-    #             list2.append(val)
-    #     return list1+list2
-    def reOrderArray(self, array):
+    def FindKthToTail(self, head, k):
         # write code here
-        i=0
-        while i<len(array):
+        list_nodes = []
+        while head:
+            list_nodes.append(head)
+            head = head.next
 
-
-so=Solution()
-print(so.reOrderArray([1,2,3,4,5,6]))
+        return list_nodes[-k] if 0 < k <= len(list_nodes) else None
