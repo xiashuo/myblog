@@ -31,22 +31,38 @@
 # print(so.lengthOfLongestSubstring("abcabcbb"))
 
 '''
-输入一个链表，输出该链表中倒数第k个结点。
+输入一个链表，反转链表后，输出新链表的表头。
 '''
 
 
-class ListNode:
-    def __init__(self, x):
-        self.val = x
-        self.next = None
-
-
 class Solution:
-    def FindKthToTail(self, head, k):
+    # 返回ListNode
+    # def ReverseList(self, pHead):
+    #     # write code here
+    #     if not pHead:
+    #         return None
+    #     list_nodes=[]
+    #     while pHead:
+    #         list_nodes.insert(0,pHead)
+    #         pHead=pHead.next
+    #     for i in range(len(list_nodes)-1):
+    #         list_nodes[i].next=list_nodes[i+1]
+    #     list_nodes[-1].next=None
+    #     return list_nodes[0]
+    # def ReverseList(self, pHead):
+    #     # write code here
+    #     p1= None
+    #     while pHead:
+    #         p2 = pHead.next
+    #         pHead.next = p1
+    #         p1 = pHead
+    #         pHead = p2
+    #     return p1
+    def ReverseList(self, pHead):
         # write code here
-        list_nodes = []
-        while head:
-            list_nodes.append(head)
-            head = head.next
-
-        return list_nodes[-k] if 0 < k <= len(list_nodes) else None
+        if not pHead:
+            return None
+        if pHead.next:
+            node=self.ReverseList(pHead.next)
+            node.next=pHead
+        return pHead

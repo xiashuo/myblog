@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="db86a571-e9e4-4e24-b040-2aad7ff4bfc2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/articles/算法/剑指offer之链表中的倒数第k个节点.md" beforeDir="false" afterPath="$PROJECT_DIR$/articles/算法/14剑指offer之链表中的倒数第k个节点.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/articles/算法/剑指offer之反转链表.md" beforeDir="false" afterPath="$PROJECT_DIR$/articles/算法/15剑指offer之反转链表.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +56,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="D:/programing/PythonProjects/tedu_execises" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
@@ -184,7 +184,9 @@
       <workItem from="1588822223180" duration="918000" />
       <workItem from="1588852663585" duration="607000" />
       <workItem from="1588858100073" duration="8571000" />
-      <workItem from="1589196512999" duration="3066000" />
+      <workItem from="1589196512999" duration="3226000" />
+      <workItem from="1589245823320" duration="920000" />
+      <workItem from="1589252315325" duration="5738000" />
     </task>
     <task id="LOCAL-00001" summary="迁移了一部分文章，并修改了部分代码">
       <created>1582722217033</created>
