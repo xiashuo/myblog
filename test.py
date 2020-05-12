@@ -31,38 +31,66 @@
 # print(so.lengthOfLongestSubstring("abcabcbb"))
 
 '''
-输入一个链表，反转链表后，输出新链表的表头。
+输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。
 '''
 
 
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+
 class Solution:
-    # 返回ListNode
-    # def ReverseList(self, pHead):
-    #     # write code here
-    #     if not pHead:
-    #         return None
-    #     list_nodes=[]
-    #     while pHead:
-    #         list_nodes.insert(0,pHead)
-    #         pHead=pHead.next
-    #     for i in range(len(list_nodes)-1):
-    #         list_nodes[i].next=list_nodes[i+1]
-    #     list_nodes[-1].next=None
-    #     return list_nodes[0]
-    # def ReverseList(self, pHead):
-    #     # write code here
-    #     p1= None
-    #     while pHead:
-    #         p2 = pHead.next
-    #         pHead.next = p1
-    #         p1 = pHead
-    #         pHead = p2
-    #     return p1
-    def ReverseList(self, pHead):
+    # 返回合并后列表
+    def Merge(self, pHead1, pHead2):
         # write code here
-        if not pHead:
-            return None
-        if pHead.next:
-            node=self.ReverseList(pHead.next)
-            node.next=pHead
-        return pHead
+        p = pHead1 if pHead1.val < pHead2.val else pHead2
+        if not pHead1:
+            return pHead2
+        if not pHead2:
+            return pHead1
+        if pHead1.val < pHead2.val:
+            p.next = self.Merge(pHead1.next, pHead2)
+        else:
+            p.next = self.Merge(pHead1, pHead2.next)
+        return p
+
+        # head = ListNode(None)
+        # p = head
+        # while pHead1 and pHead2:
+        #     if pHead1.val < pHead2.val:
+        #         p.next = pHead1
+        #         pHead1 = pHead1.next
+        #         p = p.next
+        #     else:
+        #         p.next = pHead2
+        #         pHead2 = pHead2.next
+        #         p = p.next
+        # if not pHead1:
+        #     p.next=pHead2
+        # elif not pHead2:
+        #     p.next=pHead1
+        # return head.next
+
+        # list_nodes = []
+        # while pHead1 and pHead2:
+        #     if pHead1.val < pHead2.val:
+        #         list_nodes.append(pHead1.val)
+        #         pHead1 = pHead1.next
+        #     else:
+        #         list_nodes.append(pHead2.val)
+        #         pHead2 = pHead2.next
+        # if not pHead1:
+        #     while pHead2:
+        #         list_nodes.append(pHead2.val)
+        #         pHead2 = pHead2.next
+        # elif not pHead2:
+        #     while pHead1:
+        #         list_nodes.append(pHead1.val)
+        #         pHead1 = pHead1.next
+        #
+        # for i in range(len(list_nodes)-1):
+        #     list_nodes[i].next=list_nodes[i+1]
+        # list_nodes[-1].next=None
+        # return list_nodes[0]
