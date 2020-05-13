@@ -31,66 +31,80 @@
 # print(so.lengthOfLongestSubstring("abcabcbb"))
 
 '''
-输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。
+输入两棵二叉树A，B，判断B是不是A的子结构。（ps：我们约定空树不是任意一个树的子结构）
 '''
 
 
-class ListNode:
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+#
+#
+# class Solution:
+#     def HasSubtree(self, pRoot1, pRoot2):
+#         # write code here
+#         if not pRoot1 or not pRoot2:
+#             return False
+#         return self.is_same_root_sub_tree(pRoot1, pRoot2) or self.HasSubtree(pRoot1.left,
+#                                                                              pRoot2) or self.HasSubtree(
+#             pRoot1.right, pRoot2)
+#
+#     def is_same_root_sub_tree(self, root1, root2):
+#         if not root2:
+#             return True
+#         if not root1:
+#             return False
+#         if root1.val == root2.val:
+#             return self.is_same_root_sub_tree(root1.left, root2.left) and self.is_same_root_sub_tree(root1.right,
+#                                                                                                      root2.right)
+#         return False
+
+
+class TreeNode:
     def __init__(self, x):
         self.val = x
-        self.next = None
+        self.left = None
+        self.right = None
 
 
 class Solution:
-    # 返回合并后列表
-    def Merge(self, pHead1, pHead2):
-        # write code here
-        p = pHead1 if pHead1.val < pHead2.val else pHead2
-        if not pHead1:
-            return pHead2
-        if not pHead2:
-            return pHead1
-        if pHead1.val < pHead2.val:
-            p.next = self.Merge(pHead1.next, pHead2)
-        else:
-            p.next = self.Merge(pHead1, pHead2.next)
-        return p
+    def HasSubtree(self, pRoot1, pRoot2):
+        if not pRoot1 or not pRoot2:
+            return False
+        str1 = self.inorder_traveTree(pRoot1)
+        str2 = self.inorder_traveTree(pRoot2)
+        return True if str2 in str1 else False
 
-        # head = ListNode(None)
-        # p = head
-        # while pHead1 and pHead2:
-        #     if pHead1.val < pHead2.val:
-        #         p.next = pHead1
-        #         pHead1 = pHead1.next
-        #         p = p.next
-        #     else:
-        #         p.next = pHead2
-        #         pHead2 = pHead2.next
-        #         p = p.next
-        # if not pHead1:
-        #     p.next=pHead2
-        # elif not pHead2:
-        #     p.next=pHead1
-        # return head.next
+    def inorder_traveTree(self, root):
+        if not root:
+            return ""
+        res = ""
+        res += str(root.val)
+        res += self.inorder_traveTree(root.left)
+        res += self.inorder_traveTree(root.right)
+        return res
 
-        # list_nodes = []
-        # while pHead1 and pHead2:
-        #     if pHead1.val < pHead2.val:
-        #         list_nodes.append(pHead1.val)
-        #         pHead1 = pHead1.next
-        #     else:
-        #         list_nodes.append(pHead2.val)
-        #         pHead2 = pHead2.next
-        # if not pHead1:
-        #     while pHead2:
-        #         list_nodes.append(pHead2.val)
-        #         pHead2 = pHead2.next
-        # elif not pHead2:
-        #     while pHead1:
-        #         list_nodes.append(pHead1.val)
-        #         pHead1 = pHead1.next
-        #
-        # for i in range(len(list_nodes)-1):
-        #     list_nodes[i].next=list_nodes[i+1]
-        # list_nodes[-1].next=None
-        # return list_nodes[0]
+
+node1 = TreeNode(8)
+node2 = TreeNode(8)
+node3 = TreeNode(7)
+node4 = TreeNode(9)
+node5 = TreeNode(2)
+node6 = TreeNode(4)
+node7 = TreeNode(7)
+node1.left = node2
+node1.right = node3
+node2.left = node4
+node2.right = node5
+node5.left = node6
+node5.right = node7
+
+node8 = TreeNode(8)
+node9 = TreeNode(9)
+node10 = TreeNode(2)
+node8.left = node9
+node8.right = node10
+so = Solution()
+print(so.HasSubtree(node1, node8))
