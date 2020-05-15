@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db86a571-e9e4-4e24-b040-2aad7ff4bfc2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/articles/算法/18剑指offer之二叉树的镜像.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/articles/算法/剑指offer之树的子结构.md" beforeDir="false" afterPath="$PROJECT_DIR$/articles/算法/17剑指offer之树的子结构.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/articles/科学上网/Trojan搭建.md" beforeDir="false" afterPath="$PROJECT_DIR$/articles/科学上网/Trojan搭建.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/articles/算法/剑指offer之二叉树的镜像.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/blog_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/blog_data.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
@@ -189,6 +191,9 @@
       <workItem from="1589245823320" duration="920000" />
       <workItem from="1589252315325" duration="12042000" />
       <workItem from="1589374467524" duration="8773000" />
+      <workItem from="1589424177110" duration="6272000" />
+      <workItem from="1589547027023" duration="97000" />
+      <workItem from="1589549136830" duration="3166000" />
     </task>
     <task id="LOCAL-00001" summary="迁移了一部分文章，并修改了部分代码">
       <created>1582722217033</created>
@@ -303,11 +308,6 @@
           <url>file://$PROJECT_DIR$/z.py</url>
           <line>162</line>
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test.py</url>
-          <line>80</line>
-          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
