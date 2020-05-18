@@ -1,5 +1,5 @@
 <div class="blog-article">
-<h1><a href="p.html?p=\python\ython函数中的可变长度参数" class="title">python函数中的可变长度参数</a></h1>
+<h1><a href="p.html?p=\python\python函数中的可变长度参数" class="title">python函数中的可变长度参数</a></h1>
 <span class="author">xiashuobad</span>
 <span class="time">2020-02-09 07:56</span>
 <span><a href="tags.html?t=python" class="tag">python</a></span>
