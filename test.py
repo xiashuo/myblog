@@ -31,26 +31,28 @@
 # print(so.lengthOfLongestSubstring("abcabcbb"))
 
 '''
-定义栈的数据结构，请在该类型中实现一个能够得到栈中所含最小元素的min函数（时间复杂度应为O（1））。
-注意：保证测试中不会当栈为空的时候，对栈调用pop()或者min()或者top()方法。
+输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否可能为该栈的弹出顺序。假设压入栈的所有数字均不相等。
+例如序列1,2,3,4,5是某栈的压入顺序，序列4,5,3,2,1是该压栈序列对应的一个弹出序列，但4,3,5,1,2就不可能是该压栈序列的弹出序列。
+（注意：这两个序列的长度是相等的）
 '''
 
 
 class Solution:
-    stack = []
-    min_stack = []
+    def IsPopOrder(self, pushV, popV):
+        # write code here
+        if popV[0] not in pushV:
+            return False
+        index = pushV.index(popV[0])
+        pushV = pushV[:index]
+        for i in range(1, len(popV)):
+            if popV[i] in pushV:
+                if popV[i] == pushV[-1]:
+                    pushV.pop()
+                    continue
+                else:
+                    return False
+        return True
 
-    def push(self, node):
-        self.stack.append(node)
-        if not self.min_stack or node < self.min_stack[-1]:
-            self.min_stack.append(node)
 
-    def pop(self):
-        if self.stack.pop() == self.min_stack[-1]:
-            self.min_stack.pop()
-
-    def top(self):
-        return self.stack[-1]
-
-    def min(self):
-        return self.min_stack[-1]
+so = Solution()
+print(so.IsPopOrder([1], [2]))
