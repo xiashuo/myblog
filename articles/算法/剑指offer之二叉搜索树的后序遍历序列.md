@@ -7,7 +7,7 @@
 <br/>
 
 ## 题目描述 ##
-输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历的结果。如果是则输出Yes,否则输出No。
+> 输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历的结果。如果是则输出Yes,否则输出No。
 假设输入的数组的任意两个数字都互不相同。
 ## 思路 ##
 1. 后序遍历的最后一个元素即为根节点root
@@ -19,33 +19,38 @@
 ## python实现 ##
 非递归方法
 
-	# -*- coding:utf-8 -*-
-	class Solution:
-	    def VerifySquenceOfBST(self, sequence):
-	        while sequence:
-	            root=sequence.pop()
-	            i=len(sequence)-1
-	            while sequence[i]>root:
-	                i-=1
-	            for j in range(i):
-	                if sequence[j]>root:
-	                    return False
-	        return True
+```python
+class Solution:
+    def VerifySquenceOfBST(self, sequence):
+        if not sequence:
+            return False
+        for i in range(len(sequence) - 1, 0, -1):
+            j = i - 1
+            while sequence[j] > sequence[i] and j >= 0:
+                j -= 1
+            while j >= 0:
+                if sequence[j] > sequence[i]:
+                    return False
+                j -= 1
+        return True
+```
 递归方法
 
-	# -*- coding:utf-8 -*-
-	class Solution:
-	    def VerifySquenceOfBST(self, sequence):
-	        if not sequence:
-	            return False
-	        return self.judge(sequence,0,len(sequence)-1)
-	    def judge(self,sequence,l,r):
-	        if l>=r:
-	            return True
-	        i=r-1
-	        while i>=l and sequence[i]>sequence[r]:
-	            i-=1
-	        for j in range(l,i):
-	            if sequence[j]>sequence[r]:
-	                return False
-	        return self.judge(sequence,l,i) and self.judge(sequence,i+1,r-1)
+```python
+# -*- coding:utf-8 -*-
+class Solution:
+    def VerifySquenceOfBST(self, sequence):
+        if not sequence:
+            return False
+        return self.judge(sequence,0,len(sequence)-1)
+    def judge(self,sequence,l,r):
+        if l>=r:
+            return True
+        i=r-1
+        while i>=l and sequence[i]>sequence[r]:
+            i-=1
+        for j in range(l,i):
+            if sequence[j]>sequence[r]:
+                return False
+        return self.judge(sequence,l,i) and self.judge(sequence,i+1,r-1)
+```
