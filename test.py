@@ -31,25 +31,46 @@
 # print(so.lengthOfLongestSubstring("abcabcbb"))
 
 '''
-输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历的结果。如果是则输出Yes,否则输出No。假设输入的数组的任意两个数字都互不相同。
-[4,5,6,7][7,4,6,5]
+输入一颗二叉树的根节点和一个整数，打印出二叉树中结点值的和为输入整数的所有路径。路径定义为从树的根结点开始往下一直到叶结点所经过的结点形成一条路径。
 '''
 
 
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
+
 class Solution:
-    def VerifySquenceOfBST(self, sequence):
-        if not sequence:
-            return False
-        for i in range(len(sequence) - 1, 0, -1):
-            j = i - 1
-            while sequence[j] > sequence[i] and j >= 0:
-                j -= 1
-            while j >= 0:
-                if sequence[j] > sequence[i]:
-                    return False
-                j -= 1
-        return True
+    # 返回二维列表，内部每个列表表示找到的路径
+
+    def FindPath(self, root, expectNumber):
+        # write code here
+        result, res = [], []
+        return None if not root else self.get_path(result, res, root, expectNumber)
+
+    def get_path(self, result, res, root, expectNumber):
+        if expectNumber < root.val:
+            return result
+        res.append(root.val)
+        if not root.left and not root.right:
+            if root.val == expectNumber:
+                result.append(res[:])
+        if root.left:
+            self.get_path(result, res, root.left, expectNumber - root.val)
+        if root.right:
+            self.get_path(result, res, root.right, expectNumber - root.val)
+        res.pop()
+        return result
 
 
+node1 = TreeNode(10)
+node2 = TreeNode(5)
+node3 = TreeNode(12)
+node4 = TreeNode(4)
+node5 = TreeNode(7)
+node1.left, node1.right = node2, node3
+node2.left, node2.right = node4, node5
 so = Solution()
-print(so.VerifySquenceOfBST([4,8,6,12,16,14,10]))
+print(so.FindPath(node1, 22))
