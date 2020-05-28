@@ -31,46 +31,53 @@
 # print(so.lengthOfLongestSubstring("abcabcbb"))
 
 '''
-输入一颗二叉树的根节点和一个整数，打印出二叉树中结点值的和为输入整数的所有路径。路径定义为从树的根结点开始往下一直到叶结点所经过的结点形成一条路径。
+输入一个复杂链表（每个节点中有节点值，以及两个指针，一个指向下一个节点，另一个特殊指针random指向一个随机节点），请对此链表进行深拷贝，
+并返回拷贝后的头结点。（注意，输出结果中请不要返回参数中的节点引用，否则判题程序会直接返回空）
 '''
 
 
-class TreeNode:
+class RandomListNode:
     def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None
+        self.label = x
+        self.next = None
+        self.random = None
 
 
 class Solution:
-    # 返回二维列表，内部每个列表表示找到的路径
+    # 返回 RandomListNode
+    def Clone(self, pHead):
+        if not pHead:
+            return None
+        p = pHead
+        while p:
+            copy_node = RandomListNode(p.label)
+            copy_node.next = p.next
+            p.next = copy_node
+            p = copy_node.next
 
-    def FindPath(self, root, expectNumber):
-        # write code here
-        result, res = [], []
-        return None if not root else self.get_path(result, res, root, expectNumber)
-
-    def get_path(self, result, res, root, expectNumber):
-        if expectNumber < root.val:
-            return result
-        res.append(root.val)
-        if not root.left and not root.right:
-            if root.val == expectNumber:
-                result.append(res[:])
-        if root.left:
-            self.get_path(result, res, root.left, expectNumber - root.val)
-        if root.right:
-            self.get_path(result, res, root.right, expectNumber - root.val)
-        res.pop()
-        return result
+        p = pHead
+        while p:
+            p_copy = p.next
+            if p.random:
+                p_copy.random = p.random.next
+            p=p.next.next
+        p = pHead
+        head=pHead.next
+        while p:
+            p_copy = p.next
+            p.next = p_copy.next
+            if p_copy.next:
+                p_copy.next = p_copy.next.next
+            p = p.next
+        return head
 
 
-node1 = TreeNode(10)
-node2 = TreeNode(5)
-node3 = TreeNode(12)
-node4 = TreeNode(4)
-node5 = TreeNode(7)
-node1.left, node1.right = node2, node3
-node2.left, node2.right = node4, node5
+node1 = RandomListNode(1)
+node2 = RandomListNode(2)
+node3 = RandomListNode(3)
+node1.next, node1.random = node2, node3
+node2.next = node3
+node3.random = node2
 so = Solution()
-print(so.FindPath(node1, 22))
+res = so.Clone(node1)
+print(res.label, res.next.label, res.random.label)
