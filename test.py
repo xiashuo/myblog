@@ -36,48 +36,54 @@
 '''
 
 
-class RandomListNode:
+class TreeNode:
     def __init__(self, x):
-        self.label = x
-        self.next = None
-        self.random = None
+        self.val = x
+        self.left = None
+        self.right = None
 
 
 class Solution:
-    # 返回 RandomListNode
-    def Clone(self, pHead):
-        if not pHead:
+    def Convert(self, pRootOfTree):
+        if not pRootOfTree:
             return None
-        p = pHead
-        while p:
-            copy_node = RandomListNode(p.label)
-            copy_node.next = p.next
-            p.next = copy_node
-            p = copy_node.next
+        left = self.Convert(pRootOfTree.left)
+        right = self.Convert(pRootOfTree.right)
+        if right:
+            pRootOfTree.right = right
+            right.left = pRootOfTree
+        if not left:
+            return pRootOfTree
+        p = left
+        while p.right:
+            p = p.right
+        p.right = pRootOfTree
+        pRootOfTree.left = p
 
-        p = pHead
-        while p:
-            p_copy = p.next
-            if p.random:
-                p_copy.random = p.random.next
-            p=p.next.next
-        p = pHead
-        head=pHead.next
-        while p:
-            p_copy = p.next
-            p.next = p_copy.next
-            if p_copy.next:
-                p_copy.next = p_copy.next.next
-            p = p.next
-        return head
+        return left
 
 
-node1 = RandomListNode(1)
-node2 = RandomListNode(2)
-node3 = RandomListNode(3)
-node1.next, node1.random = node2, node3
-node2.next = node3
-node3.random = node2
+# {10,6,14,4,8,12,16}
+node1 = TreeNode(10)
+node2 = TreeNode(6)
+node3 = TreeNode(14)
+node4 = TreeNode(4)
+node5 = TreeNode(8)
+node6 = TreeNode(12)
+node7 = TreeNode(16)
+node1.left, node1.right = node2, node3
+node2.left, node2.right = node4, node5
+node3.left, node3.right = node6, node7
+
 so = Solution()
-res = so.Clone(node1)
-print(res.label, res.next.label, res.random.label)
+head = so.Convert(node1)
+p = head
+while p:
+    print(p.val, end=" ")
+    if not p.right:
+        break
+    p = p.right
+
+while p:
+    print(p.val, end=" ")
+    p = p.left
