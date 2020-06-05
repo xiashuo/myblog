@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="db86a571-e9e4-4e24-b040-2aad7ff4bfc2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/articles/算法/剑指offer之字符串的全排列.md" beforeDir="false" afterPath="$PROJECT_DIR$/articles/算法/27剑指offer之字符串的全排列.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/blog_data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mytab/常用.txt" beforeDir="false" afterPath="$PROJECT_DIR$/mytab/常用.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +57,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="D:/programing/PythonProjects/tedu_execises" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
@@ -236,7 +236,9 @@
       <workItem from="1590931004720" duration="5923000" />
       <workItem from="1590974637891" duration="7247000" />
       <workItem from="1591100282679" duration="3918000" />
-      <workItem from="1591145856310" duration="6118000" />
+      <workItem from="1591145856310" duration="6728000" />
+      <workItem from="1591234707919" duration="3249000" />
+      <workItem from="1591350861295" duration="5204000" />
     </task>
     <task id="LOCAL-00001" summary="迁移了一部分文章，并修改了部分代码">
       <created>1582722217033</created>
@@ -280,26 +282,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="303" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1582904384329" />
-    <state x="499" y="111" key="FileChooserDialogImpl" timestamp="1590976194739">
+    <state x="499" y="111" key="FileChooserDialogImpl" timestamp="1591264451112">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="111" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1590976194739" />
-    <state width="1483" height="188" key="GridCell.Tab.0.bottom" timestamp="1591160230116">
+    <state x="499" y="111" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1591264451112" />
+    <state width="1483" height="188" key="GridCell.Tab.0.bottom" timestamp="1591184537336">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="188" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591160230116" />
-    <state width="1483" height="188" key="GridCell.Tab.0.center" timestamp="1591160230116">
+    <state width="1483" height="188" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591184537336" />
+    <state width="1483" height="188" key="GridCell.Tab.0.center" timestamp="1591184537335">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="188" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591160230116" />
-    <state width="1483" height="188" key="GridCell.Tab.0.left" timestamp="1591160230116">
+    <state width="1483" height="188" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591184537335" />
+    <state width="1483" height="188" key="GridCell.Tab.0.left" timestamp="1591184537335">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="188" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591160230116" />
-    <state width="1483" height="188" key="GridCell.Tab.0.right" timestamp="1591160230116">
+    <state width="1483" height="188" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591184537335" />
+    <state width="1483" height="188" key="GridCell.Tab.0.right" timestamp="1591184537335">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="188" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591160230116" />
+    <state width="1483" height="188" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591184537335" />
     <state width="714" height="205" key="GridCell.Tab.1.bottom" timestamp="1591024828888">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
