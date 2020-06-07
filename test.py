@@ -31,27 +31,17 @@
 # print(so.lengthOfLongestSubstring("abcabcbb"))
 
 '''
-输入一个字符串,按字典序打印出该字符串中字符的所有排列。
-例如输入字符串abc,则打印出由字符a,b,c所能排列出来的所有字符串
-abc,acb,bac,bca,cab和cba。
+数组中有一个数字出现的次数超过数组长度的一半，请找出这个数字。例如输入一个长度为9的数组{1,2,3,2,2,2,5,4,2}。由于数字2在数组中出现了5次，
+超过数组长度的一半，因此输出2。如果不存在则输出0。
 '''
 
 
 class Solution:
-    def Permutation(self, ss):
-        return self.all_order(list(ss), 0, len(ss), [])
-
-    def all_order(self, list_ss, k, n, res):
-        if k == n-1:
-            res.append(''.join(list_ss))
-        for i in range(k, n):
-            if list_ss[i] in list_ss[k:i]:
-                continue
-            list_ss[i], list_ss[k], = list_ss[k], list_ss[i]
-            self.all_order(list_ss, k + 1, n, res)
-            list_ss[k], list_ss[i], = list_ss[i], list_ss[k]
-        return res
-
-
-so = Solution()
-print(so.Permutation("abbc"))
+    def MoreThanHalfNum_Solution(self, numbers):
+        dict_number = {}
+        half_lenth = len(numbers) / 2
+        for val in numbers:
+            dict_number[val] = dict_number.get(val, 0) + 1
+            if dict_number[val] > half_lenth:
+                return val
+        return 0
