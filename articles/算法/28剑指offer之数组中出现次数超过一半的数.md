@@ -1,5 +1,5 @@
 <div class="blog-article">
-    <h1><a href="p.html?p=算法/剑指offer之数组中出现次数超过一半的数" class="title">剑指offer之数组中出现次数超过一半的数</a></h1>
+    <h1><a href="p.html?p=算法/28剑指offer之数组中出现次数超过一半的数" class="title">剑指offer之数组中出现次数超过一半的数</a></h1>
     <span class="author">xiashuobad</span>
     <span class="time">2018-07-03 02:45</span>
     <span><a href="tags.html?t=算法" class="tag">算法</a></span>
