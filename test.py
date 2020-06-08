@@ -37,7 +37,7 @@
 
 
 class Solution:
-    def MoreThanHalfNum_Solution(self, numbers):
+    def MoreThanHalfNum_Solution1(self, numbers):
         dict_number = {}
         half_lenth = len(numbers) / 2
         for val in numbers:
@@ -45,3 +45,15 @@ class Solution:
             if dict_number[val] > half_lenth:
                 return val
         return 0
+
+    def MoreThanHalfNum_Solution2(self, numbers):
+        count, val = 1, numbers[0]
+        for i in range(1, len(numbers)):
+            if numbers[i] == val:
+                count += 1
+            else:
+                count -= 1
+            if count == 0:
+                count = 1
+                val = numbers[i]
+        return val if numbers.count(val) > len(numbers) / 2 else 0

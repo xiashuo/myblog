@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="db86a571-e9e4-4e24-b040-2aad7ff4bfc2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/articles/算法/剑指offer之数组中出现次数超过一半的数.md" beforeDir="false" afterPath="$PROJECT_DIR$/articles/算法/28剑指offer之数组中出现次数超过一半的数.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/articles/算法/剑指offer之数组中只出现一次的数字.md" beforeDir="false" afterPath="$PROJECT_DIR$/articles/算法/剑指offer之数组中只出现一次的数字.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -239,6 +241,7 @@
       <workItem from="1591234707919" duration="3249000" />
       <workItem from="1591350861295" duration="7621000" />
       <workItem from="1591407663539" duration="1749000" />
+      <workItem from="1591622807648" duration="2088000" />
     </task>
     <task id="LOCAL-00001" summary="迁移了一部分文章，并修改了部分代码">
       <created>1582722217033</created>
