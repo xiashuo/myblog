@@ -37,23 +37,24 @@
 
 
 class Solution:
-    def MoreThanHalfNum_Solution1(self, numbers):
-        dict_number = {}
-        half_lenth = len(numbers) / 2
-        for val in numbers:
-            dict_number[val] = dict_number.get(val, 0) + 1
-            if dict_number[val] > half_lenth:
-                return val
-        return 0
+    def GetLeastNumbers_Solution(self, tinput, k):
+        if k > len(tinput):
+            return []
+        tinput.sort()
+        return tinput[:k]
 
-    def MoreThanHalfNum_Solution2(self, numbers):
-        count, val = 1, numbers[0]
-        for i in range(1, len(numbers)):
-            if numbers[i] == val:
-                count += 1
-            else:
-                count -= 1
-            if count == 0:
-                count = 1
-                val = numbers[i]
-        return val if numbers.count(val) > len(numbers) / 2 else 0
+    def GetLeastNumbers_Solution2(self, tinput, k):
+        if k > len(tinput):
+            return []
+        for i in range(k):
+            min_index = i
+            for j in range(i + 1, len(tinput)):
+                if tinput[j] < tinput[min_index]:
+                    min_index = j
+            tinput[i], tinput[min_index] = tinput[min_index], tinput[i]
+        return tinput[:k]
+
+
+so = Solution()
+res = so.GetLeastNumbers_Solution2([4, 5, 1, 6, 2, 7, 3, 8], 4)
+print(res)
