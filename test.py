@@ -54,7 +54,21 @@ class Solution:
             tinput[i], tinput[min_index] = tinput[min_index], tinput[i]
         return tinput[:k]
 
+    def GetLeastNumbers_Solution3(self, tinput, k):
+        if k > len(tinput):
+            return []
+        list_k = tinput[:k]
+        list_k.sort()
+        for i in range(k, len(tinput)):
+            j = k - 1
+            while j >= 0 and tinput[i] < list_k[j]:
+                j -= 1
+            list_k.insert(j + 1, tinput[i])
+            list_k.pop()
+
+        return list_k
+
 
 so = Solution()
-res = so.GetLeastNumbers_Solution2([4, 5, 1, 6, 2, 7, 3, 8], 4)
+res = so.GetLeastNumbers_Solution3([4, 5, 1, 6, 2, 7, 3, 8], 4)
 print(res)
