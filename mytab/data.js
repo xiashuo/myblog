@@ -4,7 +4,7 @@ var Config = getMStr(function(){
 /*
 常用
 	博客工具集，http://www.xsblog.club/article/%E5%B7%A5%E5%85%B7，img/logo.jpg
-	慕课网，http://www.imooc.com/course/landingpagephp?from=phpkecheng，img/慕课网.jpg
+	达内直播，http://www.tmooc.cn/，img/达内.png
 	牛客网，https://www.nowcoder.com/5794335，img/牛客网.jfif
 	GitHub，https://github.com/，img/GitHub.jfif
 	我的博客，http://xiashuobad.xyz，img/logo.jpg
