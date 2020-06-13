@@ -34,17 +34,16 @@
 
 '''
 
-
 class Solution:
     def FindGreatestSumOfSubArray(self, array):
-        max_sum, s = array[0], 0
-        for i in range(len(array)):
-            s += array[i]
+        max_sum, s = array[0], array[0]
+        for i in range(1,len(array)):
+            if s < 0:
+                s = array[i]
+            else:
+                s += array[i]
             if s > max_sum:
                 max_sum = s
-            if s < 0:
-                s = 0
-
         return max_sum
 
 
