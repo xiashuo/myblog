@@ -12,10 +12,10 @@ var Config = getMStr(function(){
 	
 资源下载
 	ZD423下载，http://www.zdfans.com/，img/微档下载.png
-	城通网盘,  https://www.15kankan.com/，img/城通网盘.jpg
+	城通网盘,  https://www.xxurls.com/，img/城通网盘.jpg
 	吾爱破解，https://www.52pojie.cn/，img/吾爱破解.jfif
 	MSDN，https://msdn.itellyou.cn/，img/MSDN.jfif
-	百度网盘，https://pan.baidu.com/disk/home#/all?path=%2F&vmode=list，img/百度网盘.png
+	蓝菊花搜索，http://www.lanjuhua.com/，img/蓝菊花.png
 	github,https://github.com/，img/GitHub.jfif
 	
 在线视频
