@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="db86a571-e9e4-4e24-b040-2aad7ff4bfc2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/articles/算法/剑指offer之整数中1出现的次数.md" beforeDir="false" afterPath="$PROJECT_DIR$/articles/算法/31剑指offer之整数中1出现的次数.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/blog_data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mytab/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/mytab/data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/archives.html" beforeDir="false" afterPath="$PROJECT_DIR$/archives.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p.html" beforeDir="false" afterPath="$PROJECT_DIR$/p.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tags.html" beforeDir="false" afterPath="$PROJECT_DIR$/tags.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,23 +60,24 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="D:/programing/PythonProjects/tedu_execises" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\服务器\myblog" />
-      <recent name="F:\服务器\MyBlog" />
-      <recent name="D:\programing\PythonProjects\MyBlog\articles\python" />
-      <recent name="D:\programing\PythonProjects\suiyan\assets\images" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\服务器\MyBlog\assets\plugins" />
       <recent name="D:\programing\PythonProjects\MyBlog\articles\未分类" />
       <recent name="D:\programing\PythonProjects\MyBlog\articles\算法" />
       <recent name="D:\programing\PythonProjects\MyBlog\articles" />
       <recent name="D:\programing\PythonProjects\suiyan\articles\刷机" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\学习资料\myblog\assets" />
+      <recent name="F:\服务器\myblog" />
+      <recent name="F:\服务器\MyBlog" />
+      <recent name="D:\programing\PythonProjects\MyBlog\articles\python" />
+      <recent name="D:\programing\PythonProjects\suiyan\assets\images" />
     </key>
   </component>
   <component name="RunManager" selected="Python.test">
@@ -253,7 +255,8 @@
       <workItem from="1592135001524" duration="6000" />
       <workItem from="1592230759356" duration="49000" />
       <workItem from="1592405918214" duration="2452000" />
-      <workItem from="1592461362165" duration="2875000" />
+      <workItem from="1592461362165" duration="2937000" />
+      <workItem from="1592537860538" duration="11535000" />
     </task>
     <task id="LOCAL-00001" summary="迁移了一部分文章，并修改了部分代码">
       <created>1582722217033</created>
@@ -289,30 +292,30 @@
     <option name="LAST_COMMIT_MESSAGE" value="调好了页面上的一些bug，并修改首页显示，以及标签跳转" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="436" y="101" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583644498139">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="436" y="101" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1583644498139" />
     <state x="499" y="111" key="FileChooserDialogImpl" timestamp="1591883059110">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="111" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1591883059110" />
-    <state width="1483" height="185" key="GridCell.Tab.0.bottom" timestamp="1592062681889">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1876" height="277" key="GridCell.Tab.0.bottom" timestamp="1592549517885">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1483" height="185" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592062681889" />
-    <state width="1483" height="185" key="GridCell.Tab.0.center" timestamp="1592062681889">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1876" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592549517885" />
+    <state width="1876" height="277" key="GridCell.Tab.0.center" timestamp="1592549517884">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1483" height="185" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592062681889" />
-    <state width="1483" height="185" key="GridCell.Tab.0.left" timestamp="1592062681889">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1876" height="277" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592549517884" />
+    <state width="1876" height="277" key="GridCell.Tab.0.left" timestamp="1592549517884">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1483" height="185" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592062681889" />
-    <state width="1483" height="185" key="GridCell.Tab.0.right" timestamp="1592062681889">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1876" height="277" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592549517884" />
+    <state width="1876" height="277" key="GridCell.Tab.0.right" timestamp="1592549517885">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1483" height="185" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592062681889" />
+    <state width="1876" height="277" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592549517885" />
     <state width="715" height="200" key="GridCell.Tab.1.bottom" timestamp="1591632861062">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -371,7 +374,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/myblog$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1591016089632" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/suiyan$z.coverage" NAME="z Coverage Results" MODIFIED="1582689419747" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/myblog$test.coverage" NAME="test Coverage Results" MODIFIED="1592061961240" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/myblog$test.coverage" NAME="test Coverage Results" MODIFIED="1592549513910" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/myblog$z.coverage" NAME="z Coverage Results" MODIFIED="1587891358077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyBlog$z.coverage" NAME="z Coverage Results" MODIFIED="1583758644437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

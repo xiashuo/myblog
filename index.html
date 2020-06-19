@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css">
   <link id="blogcss" rel="stylesheet" type="text/css" href="assets/css/theme-dark-1.css">
+  <link rel="stylesheet" type="text/css" href="assets/live2d/waifu.css"/>
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 
 </head>
 
@@ -51,7 +53,7 @@
             </div>
             <div class="form-group col-md-3">
               <button type="button" class="search btn btn-primary" data-toggle="modal"
-                data-target=".bd-example-modal-lg" style="font-size: 18px">搜索</button>
+                data-target=".bd-example-modal-lg" style="font-size: 16px">搜索</button>
             </div>
           </div>
         </form>
@@ -82,6 +84,22 @@
 
   </div>
   <!--//main-wrapper-->
+  <div class="waifu">
+        <div class="waifu-tips"></div>
+        <canvas id="live2d" width="320" height="250" class="live2d"></canvas>
+        <div class="waifu-tool">
+<!--            <span class="fui-home"></span>-->
+            <span class="fui-chat"></span>
+<!--            <span class="fui-eye"></span>-->
+            <span class="fui-user"></span>
+            <span class="fui-photo"></span>
+<!--            <span class="fui-info-circle"></span>-->
+<!--            <span class="fui-cross"></span>-->
+        </div>
+  </div>
+  <script src="assets/live2d/waifu-tips.js"></script>
+  <script src="assets/live2d/live2d.js"></script>
+  <script type="text/javascript">initModel()</script>
 
   <!-- Javascript -->
   <script src="assets/plugins/jquery-3.3.1.min.js"></script>
