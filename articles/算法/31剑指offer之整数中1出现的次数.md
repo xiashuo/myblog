@@ -84,11 +84,9 @@ class Solution:
     def NumberOf1Between1AndN_Solution(self, n):
         count=0
         for i in range(1,n+1):
-            count+=self.get_num(i)
+            count +=str(i).count("1")
         return count
-    def get_num(self,k):
-        s=str(k)
-        return s.count('1')
+
     #数学方法
     def NumberOf1Between1AndN_Solution(self, n):
         i,high,low,cur,tmp=1,n,0,0,0
