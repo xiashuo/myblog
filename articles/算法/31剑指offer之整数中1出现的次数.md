@@ -89,19 +89,23 @@ class Solution:
 
     #数学方法
     def NumberOf1Between1AndN_Solution(self, n):
-        i,high,low,cur,tmp=1,n,0,0,0
-        count=0
-        while high:
-            high=n/(10 ** i)
-            tmp=n % (10 ** i)
-            cur=tmp / (10 ** (i-1))
-            low=tmp % (10 ** (i-1))
-            if cur==1:
-                count +=high * (10 ** (i-1)) + low +1
-            elif cur > 1:
-                count +=(high+1) * (10 ** (i-1))
+        # i表示从右边起的第i位（个：1，百：2 。。。）
+        # cur表示当前位的数字
+        # left表示当前位左边的所有数字，right表示当前位右边的所有数字。
+        # 例如：2593，如果当前计算十位的1的个数，即i=2，cur=9，left=25,right=3
+        i, left, right, cur, temp = 1, 0, n, 0, 0
+        count = 0
+        while right:
+            temp = n % (10 ** i)
+            right = n // (10 ** i)
+            cur = temp // (10 ** (i - 1))
+            left = temp % (10 ** (i - 1))
+            if cur < 1:
+                count += right * (10 ** (i - 1))
+            elif cur == 1:
+                count += right *(10 ** (i - 1)) + left + 1
             else:
-                count +=high * (10 ** (i-1))
-            i +=1
+                count += (right + 1) * (10 ** (i - 1))
+            i += 1
         return count
 ```
