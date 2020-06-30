@@ -1,20 +1,25 @@
 {
     "mouseover": [
-        {
-            "selector": ".container a[href^='http']",
-            "text": ["要看看 <span style=\"color:#0099cc;\">{text}</span> 么？"]
-        },
+
         {
             "selector": ".fui-home",
             "text": ["点击前往首页，想回到上一页可以使用浏览器的后退功能哦"]
         },
         {
-            "selector": "#tor_show",
-            "text": ["翻页比较麻烦吗，点击可以显示这篇文章的目录呢"]
+            "selector": ".fui-user",
+            "text": ["点击可以给我换衣服哦╰(￣▽￣)╮"]
         },
         {
-            "selector": "#comment_go,.fui-chat",
-            "text": ["想要去评论些什么吗？"]
+            "selector": ".fui-photo",
+            "text": ["你想要给我拍照吗？"]
+        },
+        {
+            "selector": "#skey",
+            "text": ["试试关键字搜索功能吧"]
+        },
+        {
+            "selector": ".fui-chat",
+            "text": ["想要和我对话吗？"]
         },
         {
             "selector": "#night_mode",
@@ -65,12 +70,20 @@
             "text": ["找不到想看的内容？搜索看看吧"]
         },
         {
-            "selector": ".previous",
+            "selector": "#pre_page",
             "text": ["去上一页看看吧"]
         },
         {
-            "selector": ".next",
+            "selector": "#next_page",
             "text": ["去下一页看看吧"]
+        },
+        {
+            "selector": "#first_page",
+            "text": ["去首页看看吗？"]
+        },
+        {
+            "selector": "#last_page",
+            "text": ["想要直接跳到尾页吗？"]
         },
         {
             "selector": ".dropdown-toggle",
@@ -104,7 +117,7 @@
     "click": [
         {
             "selector": ".waifu #live2d",
-            "text": ["是…是不小心碰到了吧", "萝莉控是什么呀", "你看到我的小熊了吗", "再摸的话我可要报警了！⌇●﹏●⌇", "110吗，这里有个变态一直在摸我(ó﹏ò｡)"]
+            "text": ["是…是不小心碰到了吧", "你看到我的小熊了吗", "再摸的话我可要报警了！⌇●﹏●⌇", "110吗，这里有个变态一直在摸我(ó﹏ò｡)"]
         }
     ],"seasons": [
         {

@@ -228,10 +228,10 @@ $(document).ready(function () {
                 visiblePages: 1, //设置最多显示的页码数（例如有100页，当前第1页，则显示1 - 7页）
                 pageSize: suiyan.config.blog_list, //设置每一页的条目数
                 currentPage: 1, //当前页码
-                prev: '<button type="button" class="prev btn btn-primary">上一页</button>',
-                next: '<button type="button" class="next btn btn-primary">下一页</button>',
-                first: '<button type="button" class="prev btn btn-primary">首页</button>',
-                last: '<button type="button" class="next btn btn-primary">尾页</button>',
+                prev: '<button type="button" id="pre_page" class="prev btn btn-primary">上一页</button>',
+                next: '<button type="button" id="next_page" class="next btn btn-primary">下一页</button>',
+                first: '<button type="button" id="first_page" class="prev btn btn-primary">首页</button>',
+                last: '<button type="button" id="last_page" class="next btn btn-primary">尾页</button>',
                 page: '<button type="button" class="page btn btn-primary">{{page}}/{{totalPages}} </button>',
                 onPageChange: function (n) {
                     $('.data-list').html('');

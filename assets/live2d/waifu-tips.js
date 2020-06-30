@@ -18,7 +18,6 @@ String.prototype.render = function (context) {
         return currentObject;
     });
 };
-
 var re = /x/;
 console.log(re);
 re.toString = function() {
@@ -31,8 +30,8 @@ $(document).on('copy', function (){
 });
 
 $('.waifu-tool .fui-home').click(function (){
-    // window.location = 'https://www.xiashuobad.xyz/';
-    window.location = window.location.protocol+'//'+window.location.hostname+'/'
+    window.location.href='index.html';
+
 });
 
 $('.waifu-tool .fui-eye').click(function (){
@@ -63,13 +62,12 @@ $('.waifu-tool .fui-photo').click(function (){
     window.Live2D.captureName = 'Pio.png';
     window.Live2D.captureFrame = true;
 });
-
-(function (){
+window.onload=function (){
     var text;
-    var SiteIndexUrl = 'https://www.xiashuobad.xyz/';  // 手动指定主页
-    // var SiteIndexUrl = window.location.protocol+'//'+window.location.hostname+'/';  // 自动获取主页
-    
-    if (window.location.href == SiteIndexUrl) {      // 如果是主页
+    var current_url=document.URL;
+    var page=current_url.split('/')
+    console.log(page[4].startsWith('index'))
+    if (page[4].startsWith('index')) {      // 如果是主页
         var now = (new Date()).getHours();
         if (now > 23 || now <= 5) {
             text = '你是夜猫子呀？这么晚还不睡觉，明天起的来嘛';
@@ -111,7 +109,7 @@ $('.waifu-tool .fui-photo').click(function (){
         }
     }
     showMessage(text, 6000);
-})();
+};
 
 //window.hitokotoTimer = window.setInterval(showHitokoto,30000);
 /* 检测用户活动状态，并在空闲时 定时显示一言 */
