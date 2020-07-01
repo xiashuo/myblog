@@ -3,16 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="db86a571-e9e4-4e24-b040-2aad7ff4bfc2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/archives.html" beforeDir="false" afterPath="$PROJECT_DIR$/archives.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/theme-dark-1.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/theme-dark-1.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/build/archive.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/build/archive.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/build/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/build/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/live2d/waifu-tips.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/live2d/waifu-tips.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/build/p.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/build/p.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/build/tags.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/build/tags.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/live2d/waifu-tips.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/live2d/waifu-tips.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/live2d/waifu.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/live2d/waifu.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/p.html" beforeDir="false" afterPath="$PROJECT_DIR$/p.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tags.html" beforeDir="false" afterPath="$PROJECT_DIR$/tags.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test2.py" beforeDir="false" afterPath="$PROJECT_DIR$/test2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,7 +261,8 @@
       <workItem from="1592537860538" duration="11535000" />
       <workItem from="1592639636879" duration="7354000" />
       <workItem from="1592961035121" duration="1970000" />
-      <workItem from="1593502464131" duration="12845000" />
+      <workItem from="1593502464131" duration="13624000" />
+      <workItem from="1593566075310" duration="10607000" />
     </task>
     <task id="LOCAL-00001" summary="迁移了一部分文章，并修改了部分代码">
       <created>1582722217033</created>

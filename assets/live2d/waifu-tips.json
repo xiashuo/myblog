@@ -18,44 +18,48 @@
             "text": ["试试关键字搜索功能吧"]
         },
         {
+            "selector": ".search",
+            "text": ["快点点击搜索按钮吧，结果在向你招手😄"]
+        },
+        {
             "selector": ".fui-chat",
             "text": ["想要和我对话吗？"]
         },
         {
-            "selector": "#night_mode",
-            "text": ["深夜时要爱护眼睛呀"]
+            "selector": ".blog-description",
+            "text": ["‘你的孤独，虽败犹荣。’这是我很喜欢的一句话哦"]
         },
         {
-            "selector": "#qrcode",
-            "text": ["手机扫一下就能继续看，很方便呢"]
+            "selector": ".profile-image",
+            "text": ["这小伙长的还挺俊~"]
         },
         {
-            "selector": ".comment_reply",
-            "text": ["要吐槽些什么呢"]
+            "selector": "#home",
+            "text": ["想要回到主页吗"]
         },
         {
-            "selector": "#back-to-top",
-            "text": ["回到开始的地方吧"]
+            "selector": "#archive",
+            "text": ["文章有进行归档分类哦，进去看看吧"]
         },
         {
-            "selector": "#author",
-            "text": ["该怎么称呼你呢"]
+            "selector": "#tags",
+            "text": ["有很多关键字标签哟，进去看看吧"]
         },
         {
-            "selector": "#mail",
-            "text": ["留下你的邮箱，不然就是无头像人士了"]
+            "selector": "#user",
+            "text": ["里面有关于主人的介绍哟"]
         },
         {
-            "selector": "#url",
-            "text": ["你的家在哪里呢，好让我去参观参观"]
+            "selector": "#directory",
+            "text": ["这里是文章的目录哟"]
         },
         {
-            "selector": "#textarea",
-            "text": ["认真填写哦，垃圾评论是禁止事项"]
+            "selector": ".row .pr",
+            "text": ["前往前一篇文章哈"]
         },
         {
-            "selector": ".OwO-logo",
-            "text": ["要插入一个表情吗"]
+            "selector": ".row .ne",
+            "text": ["前往下一篇文章哈"]
         },
         {
             "selector": "#csubmit",
@@ -118,6 +122,10 @@
         {
             "selector": ".waifu #live2d",
             "text": ["是…是不小心碰到了吧", "你看到我的小熊了吗", "再摸的话我可要报警了！⌇●﹏●⌇", "110吗，这里有个变态一直在摸我(ó﹏ò｡)"]
+        },
+        {
+            "selector": "#skey",
+            "text": ["输入你想要的内容关键字，能不能搜得到我可不能保证哈"]
         }
     ],"seasons": [
         {
