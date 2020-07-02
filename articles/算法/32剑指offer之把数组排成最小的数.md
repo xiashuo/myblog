@@ -1,0 +1,36 @@
+<div class="blog-article">
+    <h1><a href="p.html?p=\算法\32剑指offer之把数组排成最小的数" class="title">32剑指offer之把数组排成最小的数</a></h1>
+    <span class="author">xiashuobad</span>
+    <span class="time">2020-07-02 19:33</span>
+    <span><a href="tags.html?t=算法" class="tag">算法</a></span>
+    </div>
+<br/>
+
+# 题目描述
+> 输入一个正整数数组，把数组里所有数字拼接起来排成一个数，
+打印能拼接出的所有数字中最小的一个。例如输入数组{3，32，321}，
+则打印出这三个数字能排成的最小数字为321323。
+
+# 解题思路
+1. 可以先将所有数字都转为字符串，变为字符串的排列与比较大小。
+2. 问题实际上可以看成是自定义排序字符串大小的问题了。
+3. 即例子中，"321"<"32"<"3"。至于排序的规则是啥呢？
+4. 可以有2个思路：一是先求所有字符串的最大长度，然后逐个补全位数，不够长度的重复
+最后一位数字。即例子中的数字变为：["333","322","321"]，然后再进行排序拼接即为结果。
+这中方法实现起来稍复杂，因为最终返回的结果是原始字符串的拼接，所以需要建立起二者的
+映射关系；第二个思路比较简单，原理是，如果字符串 a + b < b + a，则a<b，这很好理解，
+正合题目意思，两个字符串前后拼接，哪个拼接结果小，哪个就排在前面。
+5. 总结就是，根据自定义排序规则（如果字符串 a + b < b + a，则a<b）对所有字符串
+进行升序排序，然后再将所有字符串拼接起来就得到结果。
+
+# python实现
+```python
+from functools import cmp_to_key
+class Solution:
+    def PrintMinNumber(self, numbers):
+        if not numbers:
+            return ""
+        str_numbers = list(map(str, numbers))
+        str_numbers.sort(key=cmp_to_key(lambda a, b: 1 if a + b > b + a else -1))
+        return ''.join(str_numbers)
+```
