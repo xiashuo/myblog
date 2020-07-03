@@ -96,6 +96,21 @@ class Solution:
                 index_5 += 1
         return ugly_numbers[-1]
 
+    '''
+    在一个字符串(0<=字符串长度<=10000，全部由字母组成)中找到第一个只出现一次的字符,并返回它的位置, 
+    如果没有则返回 -1（需要区分大小写）.（从0开始计数）
+    '''
+
+    def FirstNotRepeatingChar(self, s):
+        if not s:
+            return -1
+        char_count = {}
+        for char in s:
+            char_count[char] = char_count.get(char, 0) + 1
+        for i in range(len(s)):
+            if char_count[s[i]] == 1:
+                return i
+
 
 if __name__ == '__main__':
     so = Solution()
