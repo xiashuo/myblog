@@ -128,8 +128,7 @@ def create_blog(title, author, pagename, tag):
     <span class="author">' + author + '</span>\n\
     <span class="time">' + create_time + '</span>\n\
     <span><a href="tags.html?t='+tag+'" class="tag">' + tag + '</a></span>\n\
-    </div>\n<br/>\n\n\
-## 可以开始写blog啦(*￣︶￣)'
+    </div><br/>\n\n## 可以开始写blog啦(*￣︶￣)'
 
 
     if os.path.isfile(blogfile):

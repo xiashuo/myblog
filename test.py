@@ -78,13 +78,28 @@ class Solution:
     """
 
     def GetUglyNumber_Solution(self, index):
-        i, j, k = 0, 0, 0
+        if not index:
+            return 0
+        index_2, index_3, index_5 = 0, 0, 0
         ugly_numbers = [1]
-        while len(ugly_numbers) < index:
-            pass
+        for i in range(1, index):
+            value_2 = ugly_numbers[index_2] * 2
+            value_3 = ugly_numbers[index_3] * 3
+            value_5 = ugly_numbers[index_5] * 5
+            min_value = min(value_2, value_3, value_5)
+            ugly_numbers.append(min_value)
+            if min_value == value_2:
+                index_2 += 1
+            if min_value == value_3:
+                index_3 += 1
+            if min_value == value_5:
+                index_5 += 1
+        return ugly_numbers[-1]
+
 
 if __name__ == '__main__':
     so = Solution()
     # print(so.NumberOf1Between1AndN_Solution(13))
     # print(so.lengthOfLongestSubstring("ffffdddde"))
-    print(so.PrintMinNumber([3334, 3, 3333332]))
+    # print(so.PrintMinNumber([3334, 3, 3333332]))
+    print(so.GetUglyNumber_Solution(7))
