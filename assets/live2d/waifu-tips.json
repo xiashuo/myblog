@@ -19,7 +19,7 @@
         },
         {
             "selector": ".search",
-            "text": ["快点点击搜索按钮吧，结果在向你招手😄"]
+            "text": ["点击搜索一下，别忘了输入关键字哟"]
         },
         {
             "selector": ".fui-chat",

@@ -4,6 +4,7 @@
     <span class="time">2020-07-03 11:41</span>
     <span><a href="tags.html?t=算法" class="tag">算法</a></span>
     </div><br/>
+    
 # 题目描述
 
 > 把只包含质因子2、3和5的数称作丑数（Ugly Number）。例如6、8都是丑数，
