@@ -3,11 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="db86a571-e9e4-4e24-b040-2aad7ff4bfc2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django-mdeditor_pip_error.md.bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/articles/python/pycham最新激活方法.md" beforeDir="false" afterPath="$PROJECT_DIR$/articles/python/pycham最新激活方法.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/build/header_footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/build/header_footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/live2d/waifu-tips.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/live2d/waifu-tips.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/live2d/waifu-tips.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/live2d/waifu-tips.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/templates/side.html" beforeDir="false" afterPath="$PROJECT_DIR$/assets/templates/side.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

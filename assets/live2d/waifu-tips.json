@@ -19,7 +19,7 @@
         },
         {
             "selector": ".search",
-            "text": ["点击搜索一下，别忘了输入关键字哟"]
+            "text": ["点击搜索一下，可以直接回车搜索哟"]
         },
         {
             "selector": ".fui-chat",

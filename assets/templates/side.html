@@ -30,6 +30,10 @@
                 <div class="form-group col-md-8">
                     <input type="text" class="form-control" id="skey" placeholder="输入关键字">
                 </div>
+<!--                这里是为了防止回车后自动刷新页面导致回车搜索界面显示不出来，
+因为当form表单中只有一个input标签时按回车键将会自动将表单提交。-->
+                <input type="text" id="" name="" style="display: none;"/>
+
                 <div class="form-group col-md-3">
                     <button type="button" class="search btn btn-primary" data-toggle="modal"
                             data-target=".bd-example-modal-lg" style="font-size: 16px">搜索
@@ -56,6 +60,6 @@
         <!--            <span class="fui-cross"></span>-->
     </div>
 </div>
-<script src="assets/live2d/waifu-tips.js"></script>
 <script src="assets/live2d/live2d.js"></script>
+<script src="assets/live2d/waifu-tips.js"></script>
 <script type="text/javascript">initModel("assets/live2d/")</script>
