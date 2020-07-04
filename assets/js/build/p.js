@@ -2,8 +2,6 @@
 var suiyan = {} //命名一个自己用的空间
 
 
-
-
 //首页搜索结果
 suiyan.getsearch = function (data, k) {
     var arr = [];
@@ -34,11 +32,11 @@ suiyan.formatData = function (data) {
             var tmpObj = {};
             tmpObj.date = year + '年' + month + '月';
             // console.log(year);
-            
+
             tmpObj.data = [];
             tmpObj.data.push(item);
             arr.push(tmpObj);
-            
+
         } else {
             if (arr[arr.length - 1]['date'] === (year + '年' + month + '月')) {
                 arr[arr.length - 1]['data'].push(item);
@@ -100,7 +98,6 @@ suiyan.format_tags_data = function (data) {
 }
 
 
-
 //返回当前TAG相关的JSON数据
 suiyan.get_tag_json = function (data, key) {
     var s = {};
@@ -116,7 +113,7 @@ suiyan.get_tag_json = function (data, key) {
 
 /**
  * JS获取url参数
- * @param {*} variable 
+ * @param {*} variable
  */
 suiyan.getQueryVariable = function (variable) {
     var query = window.location.search.substring(1);
@@ -132,95 +129,9 @@ suiyan.getQueryVariable = function (variable) {
 
 
 /**
- * 站点页面模板
- */
-
-// 左侧导航导航
-// loadHtml('./templates/side.html','lt');//JavaScript原生AJAX
-$(document).ready(function () {
-
-    // footer.html
-    $(".footer").load("assets/templates/footer.html", function (response, status, request) {
-        if (status == "success")
-            console.log("如果你能看到这里说明你已经很牛逼撩！");
-
-    });
-
-    //加载blog配置数据,并填充数据到页面
-    $.getJSON("config.json", function (data, textStatus, jqXHR) {
-        suiyan.config = data;
-        var metaheml = '<title>'+data.blog_name + data.meta_description+'</title>\
-        <meta name="keywords" content="' + data.meta_keywords + '">\
-        <meta name="description" content="' + data.meta_description + '">\
-        <meta name="author" content="' + data.blog_author + '">';
-        $("meta[name='viewport']").after(metaheml);
-
-        //blog基本信息
-        $(".blog-name a").text(data.blog_name); //bolg名称
-        $(".blog-description").text(data.blog_description);
-        $('.profile-image').attr("src", data.profile_image);
-
-        // //循环添加SNS
-        // (function (data, ul) {
-        //     for (let i = 0; i < data.length; i++) {
-        //         var lihtml = $('<li><a class="hide" href="' + data[i].url + '" target="blank_blank"><i class="fa fa-' + data[i].ico + ' fa-lg"></li></a></i>');
-        //         ul.append(lihtml);
-        //
-        //     }
-        //
-        // })(data.blog_sns, $(".social-list"));
-
-        //循环添加导航
-        (function (data, ul) {
-            for (let i = 0; i < data.length; i++) {
-                var lihtml = $('<li class="nav-item hide"><a class="nav-link" id="'+data[i].ico+'" href="' + data[i].url + '"><i class="fa fa-' + data[i].ico + ' fa-lg"></i> ' + data[i].text + '</a></li>');
-                ul.append(lihtml);
-
-            }
-
-        })(data.nav, $(".blog-nav"));
-
-        //隐藏元素的动画
-        var scon = 100
-        $('.hide').each(function (index, element) {
-            $(this).fadeIn(scon);
-            scon += 100;
-
-        });
-
-    });
-
-
-    $.getJSON("blog_data.json", function (blogdata, textStatus, jqXHR) {
-        suiyan.blog_data = blogdata;
-
-        // 搜索按钮
-        $('.search').click(function (e) {
-            var key = $('#skey').val();
-            var sdata = suiyan.getsearch(suiyan.blog_data, key)
-            var shtmlstr = '';
-            if (sdata != '') {
-                shtmlstr += '<ul class="car-list navbar-nav">'
-                for (let index = 0; index < sdata.length; index++) {
-                    const el = sdata[index];
-                    shtmlstr += '<li class="list-group-item"><a href="p.html?p=' + el.url + '">' + el.title + '</a> <span title="发布日期">' + el.time + '</span></li>';
-                }
-                shtmlstr += '</ul>'
-            } else {
-                shtmlstr = '<p>没有搜到任何结果哦！</p>'
-            }
-            $('.search-list').html(shtmlstr);
-
-        });
-
-    });
-
-
-});
-/**
- * 
+ *
  * 用来读取markdown内容并加载到页面中
- * 
+ *
  */
 
 var conname = suiyan.getQueryVariable('p'); //获得要加载Markdown文章的相对url。
@@ -271,7 +182,7 @@ $(document).ready(function () {
         //判断AJAX加载完毕加载代码美化CSS
         $('pre code').each(function (i, block) {
             hljs.highlightBlock(block);
-            $(this).html("<ol><li>" + $(this).html().replace(/\n/g,"\n</li><li>") +"\n</li></ol>");
+            $(this).html("<ol><li>" + $(this).html().replace(/\n/g, "\n</li><li>") + "\n</li></ol>");
         });
         $("img").addClass("img-fluid");
         //修改博客文章页的title
@@ -280,30 +191,30 @@ $(document).ready(function () {
 
         // 自动生成目录
         $('#directory').html('<a id="openHiddenLinkId" href="javascript:void(0)" isopen="0" style="display:block;float:right;z-index: 2000;">↗</a><p style="text-align: center;padding-bottom: 5px;color: #C7894F;">目录</p>');
-        $("#openHiddenLinkId").click(function(){
-                var isopen = $(this).attr("isopen");
-                if(isopen == "1"){
-                  $('#directory').find("p,ul").show(200);
-                  $(this).attr("isopen","0").html("↗");
-                }else{
-                  $('#directory').find("p,ul").hide(200);
-                  $(this).attr("isopen","1").html("↙");
-                }
+        $("#openHiddenLinkId").click(function () {
+            var isopen = $(this).attr("isopen");
+            if (isopen == "1") {
+                $('#directory').find("p,ul").show(200);
+                $(this).attr("isopen", "0").html("↗");
+            } else {
+                $('#directory').find("p,ul").hide(200);
+                $(this).attr("isopen", "1").html("↙");
+            }
         });
 
         var postChildren = function children(childNodes, reg) {
             var result = [],
-            isReg = typeof reg === 'object',
-            isStr = typeof reg === 'string',
-            node, i, len;
+                isReg = typeof reg === 'object',
+                isStr = typeof reg === 'string',
+                node, i, len;
             for (i = 0, len = childNodes.length; i < len; i++) {
                 node = childNodes[i];
                 // console.log(node)
                 // console.log(childNodes.length)
                 if ((node.nodeType === 1 || node.nodeType === 9) &&
                     (!reg ||
-                    isReg && reg.test(node.tagName.toLowerCase()) ||
-                    isStr && node.tagName.toLowerCase() === reg)) {
+                        isReg && reg.test(node.tagName.toLowerCase()) ||
+                        isStr && node.tagName.toLowerCase() === reg)) {
                     result.push(node);
                 }
             }
@@ -311,21 +222,21 @@ $(document).ready(function () {
             return result;
         };
 
-        createPostDirectory = function(article, directory, isDirNum) {
+        createPostDirectory = function (article, directory, isDirNum) {
             console.log(article.childNodes)
             var contentArr = [],
-            titleId = [],
-            levelArr, root, level,
-            currentList, list, li, link, i, len;
-            levelArr = (function(article, contentArr, titleId) {
+                titleId = [],
+                levelArr, root, level,
+                currentList, list, li, link, i, len;
+            levelArr = (function (article, contentArr, titleId) {
                 var titleElem = postChildren(article.childNodes, /^h\d$/),
-                levelArr = [],
-                lastNum = 1,
-                lastRevNum = 1,
-                count = 0,
-                guid = 1,
-                id = 'directory' + (Math.random() + '').replace(/\D/, ''),
-                lastRevNum, num, elem;
+                    levelArr = [],
+                    lastNum = 1,
+                    lastRevNum = 1,
+                    count = 0,
+                    guid = 1,
+                    id = 'directory' + (Math.random() + '').replace(/\D/, ''),
+                    lastRevNum, num, elem;
                 // console.log(titleElem)
                 while (titleElem.length) {
                     elem = titleElem.shift();
@@ -375,13 +286,13 @@ $(document).ready(function () {
                 link = document.createElement('a');
                 link.href = '#' + titleId[i];
                 link.innerHTML = !isDirNum ? contentArr[i] :
-                    dirNum.join('.') + ' ' + contentArr[i] ;
+                    dirNum.join('.') + ' ' + contentArr[i];
                 li.appendChild(link);
                 currentList.appendChild(li);
             }
             directory.appendChild(root);
         };
-        createPostDirectory(document.getElementById('rt'),document.getElementById('directory'), true);
+        createPostDirectory(document.getElementById('rt'), document.getElementById('directory'), true);
     })
 
 });

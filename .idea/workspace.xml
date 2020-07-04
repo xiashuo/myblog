@@ -3,7 +3,22 @@
   <component name="ChangeListManager">
     <list default="true" id="db86a571-e9e4-4e24-b040-2aad7ff4bfc2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/archives.html" beforeDir="false" afterPath="$PROJECT_DIR$/archives.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/build/archive.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/build/archive.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/build/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/build/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/build/p.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/build/p.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/build/tags.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/build/tags.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/src/archive.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/src/content.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/src/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/src/tags.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/src/util.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/assets/templates/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/templates/side.html" beforeDir="false" afterPath="$PROJECT_DIR$/assets/templates/side.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p.html" beforeDir="false" afterPath="$PROJECT_DIR$/p.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tags.html" beforeDir="false" afterPath="$PROJECT_DIR$/tags.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +45,7 @@
         <option value="HTML File" />
         <option value="CSS File" />
         <option value="Python Script" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -44,7 +60,9 @@
   </component>
   <component name="JupyterTrust" id="a10ff554-cded-4280-becf-1752c025c2c7" />
   <component name="ProjectId" id="1YIulO575fHSRmgyFweeRinnhtB" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
