@@ -1,139 +1,19 @@
-/* BuildTime:January15,202010:50:49 */
-var suiyan = {} //命名一个自己用的空间
-
-//首页搜索结果
-suiyan.getsearch = function (data, k) {
-    var arr = [];
-    data.forEach(function (item, i) {
-        var key = item.title;
-        console.log(item)
-        if (k !== '' && key.indexOf(k) > -1) {
-            arr.push(item)
-        }
-    });
-    return arr;
-}
-
-//首页加载数据ajax地址拼装
-suiyan.geturl = function (url) {
-    var mkurl = './articles/' + url + '.md'; //组装ajaxURL地址
-    return mkurl;
-}
-
-//日志归档排序
-suiyan.formatData = function (data) {
-    var arr = [];
-    data.forEach(function (item, i) {
-        var tmpDate = new Date(item.time.split('-').join('/'));//兼容safari 出现 invalid
-        var month = tmpDate.getMonth() + 1;
-        var year = tmpDate.getFullYear();
-        if (i === 0) {
-            var tmpObj = {};
-            tmpObj.date = year + '年' + month + '月';
-            // console.log(year);
-
-            tmpObj.data = [];
-            tmpObj.data.push(item);
-            arr.push(tmpObj);
-
-        } else {
-            if (arr[arr.length - 1]['date'] === (year + '年' + month + '月')) {
-                arr[arr.length - 1]['data'].push(item);
-            } else {
-                var tmpObj = {};
-                tmpObj.date = year + '年' + month + '月';
-                tmpObj.data = [];
-                tmpObj.data.push(item);
-                arr.push(tmpObj);
-            }
-        }
-
-    });
-    return arr;
-}
-
-//根据TAG重新分组数据
-suiyan.format_tags_data = function (data) {
-    var arr = []
-    data.forEach(function (item, i) {
-        var t = item.tag;
-        // console.log(t);
-        if (i === 0) {
-            //第一次循环 创建一个TAG
-            var tmpObj = {};
-            tmpObj.tag = t;
-            tmpObj.data = [];
-            tmpObj.data.push(item);
-            arr.push(tmpObj);
-        } else {
-            //如果不是第一次，就和上一次的比较TAG，如果相同，添加
-            isok = true;
-            for (let index = 0; index < arr.length; index++) {
-                const element = arr[index];
-                if (element['tag'] === t) {
-                    element['data'].push(item);
-                    isok = false;
-                    break;
-                }
-
-            }
-
-            if (isok) {
-                var tmpObj = {};
-                tmpObj.tag = t;
-                tmpObj.data = [];
-                tmpObj.data.push(item);
-                arr.push(tmpObj);
-            }
-        }
-    });
-    console.log(arr);
-
-    return arr;
-}
-
-//返回当前TAG相关的JSON数据
-suiyan.get_tag_json = function (data, key) {
-    var s = {};
-    data.forEach(function (item, i) {
-        if (item.tag == key) {
-            s = item;
-        }
-    });
-    return s;
-}
-
-/**
- * JS获取url参数
- * @param {*} variable
- */
-suiyan.getQueryVariable = function (variable) {
-    var query = window.location.search.substring(1);
-    var vars = query.split("&");
-    for (var i = 0; i < vars.length; i++) {
-        var pair = vars[i].split("=");
-        if (pair[0] == variable) {
-            return decodeURI(pair[1]);
-        }
-    }
-    return (false);
-}
 
 $(document).ready(function () {
     //加载首页的blog数据
     $.getJSON("blog_data.json", function (blogdata, textStatus, jqXHR) {
-        suiyan.blog_data = blogdata;
+        xiashuobad.blog_data = blogdata;
         // console.log(blogdata)
         $.when( //加载blog配置数据
             $.getJSON("config.json", function (data, textStatus, jqXHR) {
-                suiyan.config = data;
+                xiashuobad.config = data;
             })).then(function () {
             // 翻页及首页调用数据
-            $("#suiyanpage").jqPaginator({
+            $("#xiashuobadpage").jqPaginator({
                 // totalPages: 100,//分页总数
-                totalCounts: suiyan.blog_data.length, //设置分页的总条目数
+                totalCounts: xiashuobad.blog_data.length, //设置分页的总条目数
                 visiblePages: 1, //设置最多显示的页码数（例如有100页，当前第1页，则显示1 - 7页）
-                pageSize: suiyan.config.blog_list, //设置每一页的条目数
+                pageSize: xiashuobad.config.blog_list, //设置每一页的条目数
                 currentPage: 1, //当前页码
                 prev: '<button type="button" id="pre_page" class="prev btn btn-primary">上一页</button>',
                 next: '<button type="button" id="next_page" class="next btn btn-primary">下一页</button>',
@@ -142,15 +22,15 @@ $(document).ready(function () {
                 page: '<button type="button" class="page btn btn-primary">{{page}}/{{totalPages}} </button>',
                 onPageChange: function (n) {
                     $('.data-list').html('');
-                    var startp = suiyan.config.blog_list * (n - 1)
-                    var endp = startp + suiyan.config.blog_list;
-                    if (endp > suiyan.blog_data.length) {
-                        endp = suiyan.blog_data.length
+                    var startp = xiashuobad.config.blog_list * (n - 1)
+                    var endp = startp + xiashuobad.config.blog_list;
+                    if (endp > xiashuobad.blog_data.length) {
+                        endp = xiashuobad.blog_data.length
                     }
                     console.log(n)
                     for (let index = startp; index < endp; index++) {
                         const element = blogdata[index];
-                        var mkurl1 = suiyan.geturl(element.url);
+                        var mkurl1 = xiashuobad.geturl(element.url);
 
                         $.when(
                             $.get(mkurl1, function (data, status) {

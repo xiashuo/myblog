@@ -22,7 +22,7 @@ $(document).ready(function () {
         // $('#blogcss').attr("href", "assets/css/"+data.blogcss+".css");
         // $('#highlight').attr("href", "assets/plugins/highlight/styles/"+data.highlight+".css");
 
-        suiyan.config = data;
+        xiashuobad.config = data;
         var metaheml = '<title>' + data.blog_name + data.meta_description + '</title>\
         <meta name="keywords" content="' + data.meta_keywords + '">\
         <meta name="description" content="' + data.meta_description + '">\
@@ -66,12 +66,12 @@ $(document).ready(function () {
 
 
     $.getJSON("blog_data.json", function (blogdata, textStatus, jqXHR) {
-        suiyan.blog_data = blogdata;
+        xiashuobad.blog_data = blogdata;
 
         // 搜索按钮
         $('.search').click(function (e) {
             var key = $('#skey').val();
-            var sdata = suiyan.getsearch(suiyan.blog_data, key)
+            var sdata = xiashuobad.getsearch(xiashuobad.blog_data, key)
             var shtmlstr = '';
             if (sdata != '') {
                 shtmlstr += '<ul class="car-list navbar-nav">'

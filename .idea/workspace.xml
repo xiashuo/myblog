@@ -5,16 +5,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/archives.html" beforeDir="false" afterPath="$PROJECT_DIR$/archives.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/build/archive.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/build/archive.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/build/header_footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/build/header_footer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/build/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/build/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/build/p.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/build/p.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/build/tags.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/build/tags.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/src/archive.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/src/content.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/src/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/src/tags.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/src/util.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/assets/templates/footer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/templates/side.html" beforeDir="false" afterPath="$PROJECT_DIR$/assets/templates/side.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/p.html" beforeDir="false" afterPath="$PROJECT_DIR$/p.html" afterDir="false" />
