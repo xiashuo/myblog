@@ -4,6 +4,8 @@
     <list default="true" id="db86a571-e9e4-4e24-b040-2aad7ff4bfc2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/live2d/waifu-tips.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/live2d/waifu-tips.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/live2d/waifu-tips.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/live2d/waifu-tips.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,7 +266,7 @@
       <workItem from="1593692382649" duration="2516000" />
       <workItem from="1593741482799" duration="5687000" />
       <workItem from="1593782654985" duration="1573000" />
-      <workItem from="1593996957655" duration="843000" />
+      <workItem from="1593996957655" duration="5396000" />
     </task>
     <task id="LOCAL-00001" summary="迁移了一部分文章，并修改了部分代码">
       <created>1582722217033</created>
@@ -300,6 +302,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="调好了页面上的一些bug，并修改首页显示，以及标签跳转" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="552" y="177" key="#Inspections" timestamp="1594002595574">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="177" key="#Inspections/0.0.1920.1040@0.0.1920.1040" timestamp="1594002595574" />
     <state x="620" y="321" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593845414606">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

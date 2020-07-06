@@ -67,7 +67,7 @@ $('.waifu-tool .fui-photo').click(function () {
 $(document).ready(function () {
         var text;
         var current_url = document.URL;
-        var reg=/http.*(\/index)?.*/
+        var reg = /http.*(\/index)?.*/
         console.log(reg.test(current_url))
         if (reg.test(current_url)) {      // 如果是主页
             var now = (new Date()).getHours();
@@ -151,25 +151,17 @@ function showHitokoto() {
             showMessage(text, 3000);
         }, 5000);
     });
-    /*
-    $.getJSON('https://api.fghrsh.net/hitokoto/rand/?encode=jsc&uid=3335',function(result){
-        var text = '这句一言出处是 <span style="color:#0099cc;">『{source}』</span>，是 <span style="color:#0099cc;">FGHRSH</span> 在 {date} 收藏的！';
-        text = text.render({source: result.source, date: result.date});
-        showMessage(result.hitokoto, 5000);
-        window.setTimeout(function() {showMessage(text, 3000);}, 5000);
-    });
-    */
 }
 
 function showMessage(text, timeout, flag) {
     if (flag || sessionStorage.getItem('waifu-text') === '' || sessionStorage.getItem('waifu-text') === null) {
         if (Array.isArray(text)) text = text[Math.floor(Math.random() * text.length + 1) - 1];
-        //console.log(text);
 
         if (flag) sessionStorage.setItem('waifu-text', text);
 
         $('.waifu-tips').stop();
         $('.waifu-tips').html(text).fadeTo(200, 1);
+        $('.waifu-tips').show()
         if (timeout === undefined) timeout = 5000;
         hideMessage(timeout);
     }
@@ -180,8 +172,9 @@ function hideMessage(timeout) {
     if (timeout === undefined) timeout = 5000;
     window.setTimeout(function () {
         sessionStorage.removeItem('waifu-text')
+        $('.waifu-tips').hide()
     }, timeout);
-    $('.waifu-tips').delay(timeout).fadeTo(200, 0);
+    // $('.waifu-tips').delay(timeout).fadeTo(200, 0);
 }
 
 function initModel(waifuPath) {
