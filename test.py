@@ -1,3 +1,6 @@
+from typing import List
+
+
 class Solution:
     '''
     求字符串中不重复连续字串的最长长度
@@ -111,10 +114,53 @@ class Solution:
             if char_count[s[i]] == 1:
                 return i
 
+    '''
+    给定n个非负整数，表示直方图的方柱的高度，同时，每个方柱的宽度假定都为1，试找出直方图中最大的矩形面积
+    '''
+
+    def largestRectangleArea(self, list_height: List):
+        '''
+        递归，不推荐
+        :param list_height:
+        :return:
+        '''
+        # width = len(list_height)
+        # if not width:
+        #     return 0
+        # if width == 1:
+        #     return list_height[0]
+        # min_height = min(list_height)
+        # max_area = min_height * width
+        # min_index = list_height.index(min_height)
+        # left_area = self.largestRectangleArea(list_height[:min_index])
+        # right_area = self.largestRectangleArea(list_height[min_index + 1:])
+        # return max(left_area, right_area, max_area)
+        '''
+        用栈
+        '''
+        if not list_height:
+            return 0
+        stack = []
+        max_area = 0
+        length = len(list_height)
+        for i in range(length + 1):
+            now_rectangle = -1
+            if i < length:
+                now_rectangle = list_height[i]
+            while stack and now_rectangle <= list_height[stack[-1]]:
+                this_height = list_height[stack.pop()]
+                this_width = i
+                if stack:
+                    this_width = i - stack[-1] - 1
+                max_area = max(max_area, this_width * this_height)
+            stack.append(i)
+        return max_area
+
 
 if __name__ == '__main__':
     so = Solution()
     # print(so.NumberOf1Between1AndN_Solution(13))
     # print(so.lengthOfLongestSubstring("ffffdddde"))
     # print(so.PrintMinNumber([3334, 3, 3333332]))
-    print(so.GetUglyNumber_Solution(7))
+    # print(so.GetUglyNumber_Solution(7))
+    print(so.largestRectangleArea([2, 1, 5, 6, 2, 3]))
