@@ -67,9 +67,9 @@ $('.waifu-tool .fui-photo').click(function () {
 $(document).ready(function () {
         var text;
         var current_url = document.URL;
-        var page = current_url.split('/')
-        console.log(page[4].startsWith('index'))
-        if (page[4].startsWith('index')) {      // 如果是主页
+        var reg=/http.*(\/index)?.*/
+        console.log(reg.test(current_url))
+        if (reg.test(current_url)) {      // 如果是主页
             var now = (new Date()).getHours();
             if (now >= 23 || now < 5) {
                 text = '你是夜猫子呀？这么晚还不睡觉，明天起的来嘛';
