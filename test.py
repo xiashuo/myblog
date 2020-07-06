@@ -136,24 +136,35 @@ class Solution:
         # right_area = self.largestRectangleArea(list_height[min_index + 1:])
         # return max(left_area, right_area, max_area)
         '''
-        用栈
+        用栈,后一个比前一个大就入栈，直到后一个比前一个小。然后遍历栈，求所有矩形的最大
         '''
-        if not list_height:
-            return 0
-        stack = []
-        max_area = 0
+        # if not list_height:
+        #     return 0
+        # stack = []
+        # max_area = 0
+        # length = len(list_height)
+        # for i in range(length + 1):
+        #     now_rectangle = -1
+        #     if i < length:
+        #         now_rectangle = list_height[i]
+        #     while stack and now_rectangle <= list_height[stack[-1]]:
+        #         this_height = list_height[stack.pop()]
+        #         this_width = i
+        #         if stack:
+        #             this_width = i - stack[-1] - 1
+        #         max_area = max(max_area, this_width * this_height)
+        #     stack.append(i)
+        # return max_area
+        '''
+        不借助辅助栈，循环遍历
+        '''
         length = len(list_height)
-        for i in range(length + 1):
-            now_rectangle = -1
-            if i < length:
-                now_rectangle = list_height[i]
-            while stack and now_rectangle <= list_height[stack[-1]]:
-                this_height = list_height[stack.pop()]
-                this_width = i
-                if stack:
-                    this_width = i - stack[-1] - 1
-                max_area = max(max_area, this_width * this_height)
-            stack.append(i)
+        max_area = 0
+        for i in range(length):
+            j = i + 1
+            while j < length and list_height[j] >= list_height[i]:
+                j += 1
+            max_area = max(max_area, (j - i) * list_height[i])
         return max_area
 
 
@@ -163,4 +174,4 @@ if __name__ == '__main__':
     # print(so.lengthOfLongestSubstring("ffffdddde"))
     # print(so.PrintMinNumber([3334, 3, 3333332]))
     # print(so.GetUglyNumber_Solution(7))
-    print(so.largestRectangleArea([2, 1, 5, 6, 2, 3]))
+    print(so.largestRectangleArea([2, 1, 4, 6, 2, 3]))
