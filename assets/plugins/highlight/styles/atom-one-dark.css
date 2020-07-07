@@ -23,7 +23,7 @@ hue-6-2: #e6c07b
   overflow-x: auto;
   padding: 0.5em;
   color: #abb2bf;
-  background: #2D2E31;
+  background-color: rgba(35,35,35,0.5);
 }
 .hljs ol {
     list-style: decimal;
