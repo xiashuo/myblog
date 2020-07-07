@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="db86a571-e9e4-4e24-b040-2aad7ff4bfc2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/articles/算法/算法之直方图中最大的矩形面积.md" beforeDir="false" afterPath="$PROJECT_DIR$/articles/算法/算法之直方图中最大的矩形面积.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/theme-dark-1.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/theme-dark-1.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/plugins/highlight/styles/atom-one-dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/plugins/highlight/styles/atom-one-dark.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tags.html" beforeDir="false" afterPath="$PROJECT_DIR$/tags.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/live2d/waifu.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/live2d/waifu.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,7 +267,7 @@
       <workItem from="1593996957655" duration="6568000" />
       <workItem from="1594027660606" duration="3169000" />
       <workItem from="1594052285905" duration="604000" />
-      <workItem from="1594126593167" duration="5811000" />
+      <workItem from="1594126593167" duration="7808000" />
     </task>
     <task id="LOCAL-00001" summary="迁移了一部分文章，并修改了部分代码">
       <created>1582722217033</created>

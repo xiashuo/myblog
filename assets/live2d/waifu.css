@@ -18,10 +18,11 @@
     }
 }
 .waifu-tips {
+    position: absolute;
     opacity: 0;
     width: 270px;
     height: 80px;
-    margin: 0px 0px -10px 20px;
+    margin: 20px -50px -10px 20px;
     text-align: center;
     padding: 10px 10px;
     border: 1px solid rgba(199,137,79, 0.62);
@@ -32,7 +33,6 @@
     color: #C7894F;
     text-overflow: ellipsis;
     overflow: hidden;
-    position: relative;
     animation-delay: 5s;
     animation-duration: 50s;
     animation-iteration-count: infinite;
