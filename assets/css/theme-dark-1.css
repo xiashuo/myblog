@@ -87,8 +87,9 @@ blockquote{
 .main-wrapper {
     position: relative;
     margin-left: 340px;
-    background: rgba(28, 28, 28, 0.6);
+    background: rgba(28, 28, 28, 0.8);
     height: 100%;
+    overflow: auto;
     color: #D1D3D5;
 }
 
@@ -106,9 +107,6 @@ blockquote{
     background: #1E2128;
 }
 
-.main-wrapper .blog-p {
-    background-color: rgba(28, 28, 28, 0.7);
-}
 
 .main-wrapper .blog-p #rt {
     padding-right: 25px;
@@ -158,7 +156,7 @@ blockquote{
 }
 
 .main-wrapper .blog-list .spage {
-    background-color: rgba(28, 28, 28, 0.9);
+    background-color: rgba(28, 28, 28, 0.7);
 }
 
 .main-wrapper .blog-list .spage .prev,
@@ -210,7 +208,10 @@ blockquote{
     max-width: 110px;
     border-radius: 2px;
 }
-
+.main-wrapper .footer{
+    position: relative;
+    text-align: center;
+}
 .main-wrapper .footer .card {
     margin-top: 50px;
     background: rgba(38, 38, 38, 0);
