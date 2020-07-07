@@ -20,7 +20,7 @@ $(document).ready(function () {
             $('.tagcad').fadeToggle(500);
             xiashuobad.tag_json = xiashuobad.get_tag_json(xiashuobad.tagsjson,tag);
             $tags.append('<button class="tag-bt btn btn-info btn-sm" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"><span class="tagval">'+tag+'</span> <span class="badge badge-light">'+xiashuobad.tag_json.data.length+'</span></button>');
-            $('.card-header').text(xiashuobad.tag_json.tag);
+            // $('.card-header').text(xiashuobad.tag_json.tag);
             var $tagul = $('.card-body > ul').html('');
             var lihtml = '';
             for (let index = 0; index < xiashuobad.tag_json.data.length; index++) {
@@ -42,7 +42,7 @@ $(document).ready(function () {
             // var arr = null;
             xiashuobad.tag_json = xiashuobad.get_tag_json(xiashuobad.tagsjson,val);
             // console.log(xiashuobad.tag_json);
-            $('.card-header').text(xiashuobad.tag_json.tag);
+            // $('.card-header').text(xiashuobad.tag_json.tag);
             var $tagul = $('.card-body > ul').html('');
             var lihtml = '';
             for (let index = 0; index < xiashuobad.tag_json.data.length; index++) {

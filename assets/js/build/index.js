@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
     //加载首页的blog数据
     $.getJSON("blog_data.json", function (blogdata, textStatus, jqXHR) {
