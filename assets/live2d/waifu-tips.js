@@ -211,7 +211,7 @@ function initModel(waifuPath) {
                     var text = tips.text;
                     if (Array.isArray(tips.text)) text = tips.text[Math.floor(Math.random() * tips.text.length + 1) - 1];
                     text = text.render({text: $(this).text()});
-                    showMessage(text, 3000, true);
+                    showMessage(text, 5000, true);
                 });
             });
             $.each(result.seasons, function (index, tips) {
