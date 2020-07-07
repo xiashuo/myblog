@@ -138,23 +138,23 @@ class Solution:
         '''
         用栈,后一个比前一个大就入栈，直到后一个比前一个小。然后遍历栈，求所有矩形的最大
         '''
-        # if not list_height:
-        #     return 0
-        # stack = []
-        # max_area = 0
-        # length = len(list_height)
-        # for i in range(length + 1):
-        #     now_rectangle = -1
-        #     if i < length:
-        #         now_rectangle = list_height[i]
-        #     while stack and now_rectangle <= list_height[stack[-1]]:
-        #         this_height = list_height[stack.pop()]
-        #         this_width = i
-        #         if stack:
-        #             this_width = i - stack[-1] - 1
-        #         max_area = max(max_area, this_width * this_height)
-        #     stack.append(i)
-        # return max_area
+        if not list_height:
+            return 0
+        stack = []
+        max_area = 0
+        length = len(list_height)
+        for i in range(length + 1):
+            now_rectangle = -1
+            if i < length:
+                now_rectangle = list_height[i]
+            while stack and now_rectangle <= list_height[stack[-1]]:
+                this_height = list_height[stack.pop()]
+                this_width = i
+                if stack:
+                    this_width = i - stack[-1] - 1
+                max_area = max(max_area, this_width * this_height)
+            stack.append(i)
+        return max_area
         '''
         不借助辅助栈，循环遍历
         '''
