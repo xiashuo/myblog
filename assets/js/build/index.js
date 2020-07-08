@@ -34,11 +34,11 @@ $(document).ready(function () {
                         $.when(
                             $.get(mkurl1, function (data, status) {
                                 // console.log(data)
-                                showdata = data.substring(0, 350)
-                                if (data.length > 350) {
+                                showdata = data.substring(0, 600)
+                                if (data.length > 600) {
                                     showdata += ' ......'
                                 }
-                                htmlString = '<div class="b_data list-group-item" style="height: 200px">' +
+                                htmlString = '<div class="b_data list-group-item">' +
                                     showdata + '</div><br/>';
                                 $('.data-list').append(htmlString);
 
