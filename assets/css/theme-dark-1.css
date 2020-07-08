@@ -208,12 +208,9 @@ blockquote{
     max-width: 110px;
     border-radius: 2px;
 }
-.main-wrapper .footer{
-    position: relative;
-    text-align: center;
-}
+
 .main-wrapper .footer .card {
-    margin-top: 50px;
+    margin-bottom: 50px;
     background: rgba(38, 38, 38, 0);
     border: none;
 }
@@ -288,7 +285,7 @@ blockquote{
     right: 45px;
     display: inline-block;
     text-align: left;
-    background-color: rgba(35,35,35,0.9);
+    background-color: rgba(35,35,35,0.7);
     padding: 10px 20px;
     border-radius: 3px;
     filter: alpha(Opacity=90);
