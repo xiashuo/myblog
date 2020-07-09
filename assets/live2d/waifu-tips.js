@@ -250,9 +250,9 @@ function loadRandModel() {
         dataType: "json",
         success: function (result) {
             if (result.textures['id'] == 1 && (modelTexturesId == 1 || modelTexturesId == 0)) {
-                showMessage('我还没有其他衣服呢', 3000, true);
+                showMessage('我还没有其他衣服呢', 5000, true);
             } else {
-                showMessage('我的新衣服好看嘛', 3000, true);
+                showMessage('我的新衣服好看嘛', 5000, true);
             }
             loadModel(modelId, result.textures['id']);
         }

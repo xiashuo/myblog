@@ -34,7 +34,7 @@ def create_blog_data_Json(adir):
         for name in files:
             # 值读取.md
             if name.endswith('.md'):
-                url = root.replace(ARTICLES_DIR,'') + '\\'+ name.replace('.md','')  # 最后需要组装的相对目录
+                url = root.replace(ARTICLES_DIR, '') + '\\' + name.replace('.md', '')  # 最后需要组装的相对目录
                 furl = os.path.join(root, name)  # 当前文件的绝对目录
                 if getmd(furl):
                     datahtml = getmd(furl)  # 取回当前.md文件的HTML头部信息
@@ -42,7 +42,7 @@ def create_blog_data_Json(adir):
                     f_data["url"] = url
                     data_json.append(f_data)  # 添加到需要返回的数据数组中
 
-    data_json.sort(key = lambda x:x["time"],reverse = True)#对数组进行降序排序
+    data_json.sort(key=lambda x: x["time"], reverse=True)  # 对数组进行降序排序
     data_json_str = json.dumps(data_json, ensure_ascii=False)  # 转化为json字符串
 
     return data_json_str
@@ -100,8 +100,8 @@ def create_blog(title, author, pagename, tag):
     # 文章创建时间
     create_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
     if not tag:
-        tag='未分类'
-    dir=tag
+        tag = '未分类'
+    dir = tag
     if pagename == '':
         pagename = datetime.datetime.now().strftime("%Y%m%d%H%M")
     if author == '':
@@ -121,15 +121,14 @@ def create_blog(title, author, pagename, tag):
     if not os.path.isdir(file_dir):
         os.makedirs(file_dir)
 
-    article_url='\\'+dir+'\\'+pagename
+    article_url = '\\' + dir + '\\' + pagename
     # print(blogpath)
     bloghtml = '<div class="blog-article">\n\
-    <h1><a href="p.html?p='+article_url+'" class="title">' + title + '</a></h1>\n\
+    <h1><a href="p.html?p=' + article_url + '" class="title">' + title + '</a></h1>\n\
     <span class="author">' + author + '</span>\n\
     <span class="time">' + create_time + '</span>\n\
-    <span><a href="tags.html?t='+tag+'" class="tag">' + tag + '</a></span>\n\
+    <span><a href="tags.html?t=' + tag + '" class="tag">' + tag + '</a></span>\n\
     </div><br/>\n\n## 可以开始写blog啦(*￣︶￣)'
-
 
     if os.path.isfile(blogfile):
         print('文件存在相同名称，创建失败。')
@@ -151,28 +150,35 @@ def create_test(con):
     '''
     dir = "suiyantest"
     for i in range(con):
-        #随机生成一些文章数据填充，用来测试
-        title = random.choice(("打法撒发射点发斯蒂芬","斯蒂芬阿斯蒂芬斯蒂芬","斯蒂芬阿斯蒂芬","斯蒂芬阿斯蒂芬","斯蒂芬斯蒂芬阿斯蒂芬3",))
-        tag = random.choice(("Java","JavaScript","Python","C++","程序员",))
-        pagename = str(random.randint(99999,99999999))
-        create_blog(title=title,tag=tag,author='',pagename=pagename)
+        # 随机生成一些文章数据填充，用来测试
+        title = random.choice(("打法撒发射点发斯蒂芬", "斯蒂芬阿斯蒂芬斯蒂芬", "斯蒂芬阿斯蒂芬", "斯蒂芬阿斯蒂芬", "斯蒂芬斯蒂芬阿斯蒂芬3",))
+        tag = random.choice(("Java", "JavaScript", "Python", "C++", "程序员",))
+        pagename = str(random.randint(99999, 99999999))
+        create_blog(title=title, tag=tag, author='', pagename=pagename)
+
 
 def edit_mds(dir=ARTICLES_DIR):
-    count=0
+    count = 0
     for root, dirs, files in os.walk(dir):
         for name in files:
             # 值读取.md
-            file=root+'\\'+name
+            file = root + '\\' + name
             if file.endswith('.md'):
-                with open(file, "r", encoding="utf-8") as f1, open("%s.bak" % file, "w", encoding="utf-8") as f2:
-
-                    for line in f1:
-                        new_line=re.sub('http://www.xsblog.club/','',line)
-                        f2.write(new_line)
-                os.remove(file)
-                os.rename("%s.bak" % file, file)
-                print("修改{}成功！".format(name))
-                count += 1
+                # f1 = open(file, "r", encoding="utf-8")
+                # data = f1.read()
+                # f1.close()
+                # new_data = re.sub(r'\d*剑指offer', '算法', data)
+                # f2 = open(file, "w", encoding="utf-8")
+                # f2.write(new_data)
+                # f2.close()
+                # if data != new_data:
+                #     print(f"修改{name}成功！")
+                #     count += 1
+                new_name = re.sub(r'\d*剑指offer', '算法', file)
+                if file != new_name:
+                    os.rename(file,new_name)
+                    print(f"修改{file}成功！")
+                    count += 1
     print("共修改{}条数据".format(count))
 
 
@@ -185,13 +191,13 @@ def main():
     parser.add_argument("-a", "--author", help="请输入文章作者，默认调用站长昵称", default='')
     parser.add_argument("-p", "--pagename", help="请输入文章地址页面名称", default='')
     parser.add_argument("-d", "--dir", help="请输入文章地址所属目录", default='')
-    parser.add_argument("-tt", "--suiyantest", help="生成测试blog,填写需要生成的数目，测试文章放在目录suiyantest下。",type=int,)
+    parser.add_argument("-tt", "--suiyantest", help="生成测试blog,填写需要生成的数目，测试文章放在目录suiyantest下。", type=int, )
 
     args = parser.parse_args()
     if args.version:
         print(SUIYANVERSION)
     elif args.newblog:
-        is_or_not_success=create_blog(title=args.newblog,author=args.author,tag=args.tag,pagename=args.pagename)
+        is_or_not_success = create_blog(title=args.newblog, author=args.author, tag=args.tag, pagename=args.pagename)
         if is_or_not_success:
             jsonstr = create_blog_data_Json(ARTICLES_DIR)
             write_data_json(jsonstr)
