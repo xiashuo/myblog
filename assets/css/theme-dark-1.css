@@ -173,7 +173,6 @@ blockquote{
     margin-bottom: 10px;
     background: rgba(28, 28, 28, 0.7);
     color: #D1D3D5;
-    height: 230px;
     overflow: hidden;
     padding-bottom: 20px;
 }
@@ -250,6 +249,9 @@ blockquote{
 
 .hide {
     display: none;
+}
+.author,.time{
+    color: #007900;
 }
 
 .directory-content {
