@@ -168,6 +168,77 @@ class Solution:
         return max_area
 
 
+'''
+运用你所掌握的数据结构，设计和实现一个  LRU (最近最少使用) 缓存机制。它应该支持以下操作： 获取数据 get 和 写入数据 put 。
+获取数据 get(key) - 如果关键字 (key) 存在于缓存中，则获取关键字的值（总是正数），否则返回 -1。
+写入数据 put(key, value) - 如果关键字已经存在，则变更其数据值；如果关键字不存在，则插入该组「关键字/值」。当缓存容量达到上限时，
+它应该在写入新数据之前删除最久未使用的数据值，从而为新的数据值留出空间。
+
+进阶:
+你是否可以在 O(1) 时间复杂度内完成这两种操作？
+'''
+
+
+class Node:
+    def __init__(self, key=None, value=None):
+        self.key = key
+        self.value = value
+        self.pre = None
+        self.next = None
+
+
+class LRUCache:
+
+    def __init__(self, capacity: int):
+        self.dict_cache = {}
+        self.capacity = capacity
+        self.head = Node()
+        self.tail = Node()
+        self.head.next = self.tail
+        self.tail.pre = self.head
+
+    def get(self, key: int) -> int:
+        # 如果key已存在，则返回key对应的节点的value值，并将该节点移到尾部
+        if key in self.dict_cache:
+            self.move_node_to_tail(key)
+            return self.dict_cache[key].value
+        # key不存在则返回-1
+        return -1
+
+    def put(self, key: int, value: int) -> None:
+        # 如果key已存在，则修改key对应节点的value值，并将该节点移到尾部
+        if key in self.dict_cache:
+            self.move_node_to_tail(key)
+            self.dict_cache[key].value = value
+        else:
+            # 如果key不存在的话，则判断缓存是否已满
+            if len(self.dict_cache) == self.capacity:
+                # 缓存满了，则删除第一个节点,与哈希字典中的值
+                del self.dict_cache[self.head.next.key]
+                self.head.next = self.head.next.next
+                self.head.next.pre = self.head
+            # 插入新节点到链表尾部
+            node = Node(key, value)
+            # 插入到尾部
+            self.tail.pre.next = node
+            node.pre = self.tail.pre
+            node.next = self.tail
+            self.tail.pre = node
+            self.dict_cache[key] = node
+
+    # 将某个节点移动到尾部
+    def move_node_to_tail(self, key):
+        cur_node = self.dict_cache[key]
+        # 删除当前节点
+        cur_node.pre.next = cur_node.next
+        cur_node.next.pre = cur_node.pre
+        # 将当前节点加入到尾节点前
+        self.tail.pre.next = cur_node
+        cur_node.pre = self.tail.pre
+        cur_node.next = self.tail
+        self.tail.pre = cur_node
+
+
 if __name__ == '__main__':
     so = Solution()
     # print(so.NumberOf1Between1AndN_Solution(13))
