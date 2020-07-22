@@ -166,6 +166,9 @@ class Solution:
                 j += 1
             max_area = max(max_area, (j - i) * list_height[i])
         return max_area
+		
+	def test():
+		pass
 
 
 '''
