@@ -166,9 +166,17 @@ class Solution:
                 j += 1
             max_area = max(max_area, (j - i) * list_height[i])
         return max_area
-		
-	def test():
-		pass
+
+    def cutRope(self, number):
+        max_s = 1
+        for i in range(2, number // 2 + 1):
+            a = number // i
+            b = number % i
+            s = (a + 1) ** b * a ** (i - b)
+            if s > max_s:
+                max_s = s
+
+        return max_s
 
 
 '''
@@ -248,4 +256,5 @@ if __name__ == '__main__':
     # print(so.lengthOfLongestSubstring("ffffdddde"))
     # print(so.PrintMinNumber([3334, 3, 3333332]))
     # print(so.GetUglyNumber_Solution(7))
-    print(so.largestRectangleArea([2, 1, 4, 6, 2, 3]))
+    # print(so.largestRectangleArea([2, 1, 4, 6, 2, 3]))
+    print(so.cutRope(6))
