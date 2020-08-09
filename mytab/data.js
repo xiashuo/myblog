@@ -22,7 +22,6 @@ var Config = getMStr(function(){
 	365视频，https://www.k365.tv/，img/365影视.png
 	疯狂影视，http://ifkdy.com/，img/logo.jpg
 	碟影视界，https://dvdhd.me/，img/碟影.png
-	ADC电影网，https://www.adcmove.com/，img/logo.jpg
 	完美看看，https://www.wanmeikk.me/，img/logo.jpg
 	草民电影，https://www.cmdy5.com/，img/logo.jpg
 
