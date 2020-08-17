@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="db86a571-e9e4-4e24-b040-2aad7ff4bfc2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="db86a571-e9e4-4e24-b040-2aad7ff4bfc2" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,24 +56,24 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/articles/python" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\学习资料\myblog" />
-      <recent name="F:\服务器\myblog" />
-      <recent name="D:\学习资料\myblog\assets" />
-      <recent name="F:\服务器\MyBlog" />
-      <recent name="D:\programing\PythonProjects\MyBlog\articles\python" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\服务器\MyBlog\assets\plugins" />
       <recent name="D:\programing\PythonProjects\MyBlog\articles\未分类" />
       <recent name="D:\programing\PythonProjects\MyBlog\articles\算法" />
       <recent name="D:\programing\PythonProjects\MyBlog\articles" />
       <recent name="D:\programing\PythonProjects\suiyan\articles\刷机" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\学习资料\myblog" />
+      <recent name="F:\服务器\myblog" />
+      <recent name="D:\学习资料\myblog\assets" />
+      <recent name="F:\服务器\MyBlog" />
+      <recent name="D:\programing\PythonProjects\MyBlog\articles\python" />
     </key>
   </component>
   <component name="RunManager" selected="Python.test">
