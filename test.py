@@ -250,11 +250,71 @@ class LRUCache:
         self.tail.pre = cur_node
 
 
+''' 
+归并排序python小实现一下
+'''
+# 版本一：直接排序list_target
+def merge_sort(list_target):
+    # 递归终止
+    if len(list_target) == 1:
+        return
+    # 拆分
+    mid = len(list_target) // 2
+    left_list = list_target[:mid]
+    right_list = list_target[mid:]
+    merge_sort(left_list)
+    merge_sort(right_list)
+    # 合并
+    list_target.clear()
+    while left_list and right_list:
+        if left_list[0] < right_list[0]:
+            list_target.append(left_list.pop(0))
+        else:
+            list_target.append(right_list.pop(0))
+
+    if not left_list:
+        list_target.extend(right_list)
+    else:
+        list_target.extend(left_list)
+
+
+# 版本二；排序并返回一个有序的新列表，list_target不变
+def merge_sorted(list_target):
+    # 递归终止
+    if len(list_target) == 1:
+        return list_target
+    # 拆分
+    mid = len(list_target) // 2
+    left = list_target[:mid]
+    right = list_target[mid:]
+    left_sorted = merge_sorted(left)
+    right_sorted = merge_sorted(right)
+    # 合并
+    list_merged = []
+    while left_sorted and right_sorted:
+        if left_sorted[0] < right_sorted[0]:
+            list_merged.append(left_sorted.pop(0))
+        else:
+            list_merged.append(right_sorted.pop(0))
+
+    if not left_sorted:
+        list_merged.extend(right_sorted)
+    else:
+        list_merged.extend(left_sorted)
+
+    return list_merged
+
+
 if __name__ == '__main__':
-    so = Solution()
+    # so = Solution()
     # print(so.NumberOf1Between1AndN_Solution(13))
     # print(so.lengthOfLongestSubstring("ffffdddde"))
     # print(so.PrintMinNumber([3334, 3, 3333332]))
     # print(so.GetUglyNumber_Solution(7))
     # print(so.largestRectangleArea([2, 1, 4, 6, 2, 3]))
-    print(so.cutRope(6))
+    # print(so.cutRope(6))
+    li = [2, 1, 4, 6, 2, 3]
+    # merge_sort(li)
+    print(merge_sorted(li))
+    print(li)
+
