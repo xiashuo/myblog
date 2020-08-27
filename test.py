@@ -178,6 +178,49 @@ class Solution:
 
         return max_s
 
+    '''
+    在数组中的两个数字，如果前面一个数字大于后面的数字，则这两个数字组成一个逆序对。输入一个数组,求出这个数组中的逆序对的总数P。并将P对1000000007取模的结果输出。
+     即输出P%1000000007
+     
+     题目保证输入的数组中没有的相同的数字
+
+    数据范围：
+    
+        对于%50的数据,size<=10^4
+    
+        对于%75的数据,size<=10^5
+    
+        对于%100的数据,size<=2*10^5
+    示例：
+    输入：1,2,3,4,5,6,7,0
+    输出：7
+    '''
+
+    def InversePairs(self, data):
+        if len(data) <= 1:
+            return 0
+        mid = len(data) // 2
+        left_data = data[:mid]
+        right_data = data[mid:]
+        left_count = self.InversePairs(left_data)
+        right_count = self.InversePairs(right_data)
+        cur_count = 0
+        data.clear()
+        while left_data and right_data:
+            if left_data[-1] > right_data[-1]:
+                data.insert(0, left_data.pop())
+                cur_count += len(right_data)
+            else:
+                data.insert(0, right_data.pop())
+        if left_data:
+            for i in range(len(left_data) - 1, -1, -1):
+                data.insert(0, left_data[i])
+        if right_data:
+            for j in range(len(right_data) - 1, -1, -1):
+                data.insert(0, right_data[j])
+
+        return (left_count + right_count + cur_count) % 1000000007
+
 
 '''
 运用你所掌握的数据结构，设计和实现一个  LRU (最近最少使用) 缓存机制。它应该支持以下操作： 获取数据 get 和 写入数据 put 。
@@ -253,6 +296,8 @@ class LRUCache:
 ''' 
 归并排序python小实现一下
 '''
+
+
 # 版本一：直接排序list_target
 def merge_sort(list_target):
     # 递归终止
@@ -306,15 +351,15 @@ def merge_sorted(list_target):
 
 
 if __name__ == '__main__':
-    # so = Solution()
+    so = Solution()
     # print(so.NumberOf1Between1AndN_Solution(13))
     # print(so.lengthOfLongestSubstring("ffffdddde"))
     # print(so.PrintMinNumber([3334, 3, 3333332]))
     # print(so.GetUglyNumber_Solution(7))
     # print(so.largestRectangleArea([2, 1, 4, 6, 2, 3]))
     # print(so.cutRope(6))
-    li = [2, 1, 4, 6, 2, 3]
+    # li = [2, 1, 4, 6, 2, 3]
     # merge_sort(li)
-    print(merge_sorted(li))
-    print(li)
-
+    # print(merge_sorted(li))
+    # print(li.extend([5, 5]))
+    print(so.InversePairs([364,637,341,406,747,995,234,971,571,219,993,407,416,366,315,301,601,650,418,355,460,505,360,965,516,648,727,667,465,849,455,181,486,149,588,233,144,174,557,67,746,550,474,162,268,142,463,221,882,576,604,739,288,569,256,936,275,401,497,82,935,983,583,523,697,478,147,795,380,973,958,115,773,870,259,655,446,863,735,784,3,671,433,630,425,930,64,266,235,187,284,665,874,80,45,848,38,811,267,575]))
