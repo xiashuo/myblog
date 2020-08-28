@@ -221,6 +221,23 @@ class Solution:
 
         return (left_count + right_count + cur_count) % 1000000007
 
+    '''
+    输入两个链表，找出它们的第一个公共结点。（注意因为传入数据是链表，所以错误测试数据的提示是用其他方式显示的，保证传入数据是正确的）
+    '''
+
+    def FindFirstCommonNode(self, pHead1, pHead2):
+        p1,p2=pHead1,pHead2
+        while p1!=p2:
+            p1 = p1.next if p1 else pHead2
+            p2 = p2.next if p2 else pHead1
+        return p1
+
+
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
 
 '''
 运用你所掌握的数据结构，设计和实现一个  LRU (最近最少使用) 缓存机制。它应该支持以下操作： 获取数据 get 和 写入数据 put 。
@@ -351,7 +368,15 @@ def merge_sorted(list_target):
 
 
 if __name__ == '__main__':
+    node1 = ListNode(1)
+    node2 = ListNode(2)
+    node3 = ListNode(3)
+    node4 = ListNode(4)
+    node1.next = node2
+    node2.next = node3
+    node4.next = node2
     so = Solution()
+    print(so.FindFirstCommonNode(node1,node4).val)
     # print(so.NumberOf1Between1AndN_Solution(13))
     # print(so.lengthOfLongestSubstring("ffffdddde"))
     # print(so.PrintMinNumber([3334, 3, 3333332]))
@@ -362,4 +387,9 @@ if __name__ == '__main__':
     # merge_sort(li)
     # print(merge_sorted(li))
     # print(li.extend([5, 5]))
-    print(so.InversePairs([364,637,341,406,747,995,234,971,571,219,993,407,416,366,315,301,601,650,418,355,460,505,360,965,516,648,727,667,465,849,455,181,486,149,588,233,144,174,557,67,746,550,474,162,268,142,463,221,882,576,604,739,288,569,256,936,275,401,497,82,935,983,583,523,697,478,147,795,380,973,958,115,773,870,259,655,446,863,735,784,3,671,433,630,425,930,64,266,235,187,284,665,874,80,45,848,38,811,267,575]))
+    # print(so.InversePairs(
+    #     [364, 637, 341, 406, 747, 995, 234, 971, 571, 219, 993, 407, 416, 366, 315, 301, 601, 650, 418, 355, 460, 505,
+    #      360, 965, 516, 648, 727, 667, 465, 849, 455, 181, 486, 149, 588, 233, 144, 174, 557, 67, 746, 550, 474, 162,
+    #      268, 142, 463, 221, 882, 576, 604, 739, 288, 569, 256, 936, 275, 401, 497, 82, 935, 983, 583, 523, 697, 478,
+    #      147, 795, 380, 973, 958, 115, 773, 870, 259, 655, 446, 863, 735, 784, 3, 671, 433, 630, 425, 930, 64, 266, 235,
+    #      187, 284, 665, 874, 80, 45, 848, 38, 811, 267, 575]))
