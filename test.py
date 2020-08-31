@@ -1,5 +1,14 @@
 from typing import List
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
 
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
 
 class Solution:
     '''
@@ -226,19 +235,21 @@ class Solution:
     '''
 
     def FindFirstCommonNode(self, pHead1, pHead2):
-        p1,p2=pHead1,pHead2
-        while p1!=p2:
+        p1, p2 = pHead1, pHead2
+        while p1 != p2:
             p1 = p1.next if p1 else pHead2
             p2 = p2.next if p2 else pHead1
         return p1
 
-
-class ListNode:
-    def __init__(self, x):
-        self.val = x
-        self.next = None
-
-
+    '''
+    输入一棵二叉树，求该树的深度。从根结点到叶结点依次经过的结点（含根、叶结点）形成树的一条路径，最长路径的长度为树的深度。
+    '''
+    def TreeDepth(self, pRoot):
+        if not pRoot:
+            return 0
+        left_subtree_depth = self.TreeDepth(pRoot.left)
+        right_subtree_depth = self.TreeDepth(pRoot.right)
+        return left_subtree_depth+1 if left_subtree_depth>=right_subtree_depth else right_subtree_depth+1
 '''
 运用你所掌握的数据结构，设计和实现一个  LRU (最近最少使用) 缓存机制。它应该支持以下操作： 获取数据 get 和 写入数据 put 。
 获取数据 get(key) - 如果关键字 (key) 存在于缓存中，则获取关键字的值（总是正数），否则返回 -1。
@@ -376,7 +387,7 @@ if __name__ == '__main__':
     node2.next = node3
     node4.next = node2
     so = Solution()
-    print(so.FindFirstCommonNode(node1,node4).val)
+    print(so.FindFirstCommonNode(node1, node4).val)
     # print(so.NumberOf1Between1AndN_Solution(13))
     # print(so.lengthOfLongestSubstring("ffffdddde"))
     # print(so.PrintMinNumber([3334, 3, 3333332]))
