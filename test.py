@@ -1,14 +1,18 @@
 from typing import List
+
+
 class ListNode:
     def __init__(self, x):
         self.val = x
         self.next = None
+
 
 class TreeNode:
     def __init__(self, x):
         self.val = x
         self.left = None
         self.right = None
+
 
 class Solution:
     '''
@@ -244,14 +248,29 @@ class Solution:
     '''
     输入一棵二叉树，求该树的深度。从根结点到叶结点依次经过的结点（含根、叶结点）形成树的一条路径，最长路径的长度为树的深度。
     '''
+
     def TreeDepth(self, pRoot):
         if not pRoot:
             return 0
         left_subtree_depth = self.TreeDepth(pRoot.left)
         right_subtree_depth = self.TreeDepth(pRoot.right)
-        return left_subtree_depth+1 if left_subtree_depth>=right_subtree_depth else right_subtree_depth+1
+        return left_subtree_depth + 1 if left_subtree_depth >= right_subtree_depth else right_subtree_depth + 1
 
+    '''
+    输入一棵二叉树，判断该二叉树是否是平衡二叉树。
+    在这里，我们只需要考虑其平衡性，不需要考虑其是不是排序二叉树
+    '''
 
+    def IsBalanced_Solution(self, pRoot):
+        return False if self.get_tree_depth(pRoot)==-1 else True
+    def get_tree_depth(self, root):
+        if not root:
+            return 0
+        left_depth= self.get_tree_depth(root.left)
+        right_depth= self.get_tree_depth(root.right)
+        if left_depth==-1 or right_depth==-1:
+            return -1
+        return max(left_depth,right_depth)+1 if abs(left_depth-right_depth)<=1 else -1
 
 
 '''
@@ -383,15 +402,15 @@ def merge_sorted(list_target):
 
 
 if __name__ == '__main__':
-    node1 = ListNode(1)
-    node2 = ListNode(2)
-    node3 = ListNode(3)
-    node4 = ListNode(4)
-    node1.next = node2
-    node2.next = node3
-    node4.next = node2
+    # node1 = ListNode(1)
+    # node2 = ListNode(2)
+    # node3 = ListNode(3)
+    # node4 = ListNode(4)
+    # node1.next = node2
+    # node2.next = node3
+    # node4.next = node2
     so = Solution()
-    print(so.FindFirstCommonNode(node1, node4).val)
+    # print(so.FindFirstCommonNode(node1, node4).val)
     # print(so.NumberOf1Between1AndN_Solution(13))
     # print(so.lengthOfLongestSubstring("ffffdddde"))
     # print(so.PrintMinNumber([3334, 3, 3333332]))
@@ -408,3 +427,4 @@ if __name__ == '__main__':
     #      268, 142, 463, 221, 882, 576, 604, 739, 288, 569, 256, 936, 275, 401, 497, 82, 935, 983, 583, 523, 697, 478,
     #      147, 795, 380, 973, 958, 115, 773, 870, 259, 655, 446, 863, 735, 784, 3, 671, 433, 630, 425, 930, 64, 266, 235,
     #      187, 284, 665, 874, 80, 45, 848, 38, 811, 267, 575]))
+    print(False+1)
