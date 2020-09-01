@@ -250,6 +250,10 @@ class Solution:
         left_subtree_depth = self.TreeDepth(pRoot.left)
         right_subtree_depth = self.TreeDepth(pRoot.right)
         return left_subtree_depth+1 if left_subtree_depth>=right_subtree_depth else right_subtree_depth+1
+
+
+
+
 '''
 运用你所掌握的数据结构，设计和实现一个  LRU (最近最少使用) 缓存机制。它应该支持以下操作： 获取数据 get 和 写入数据 put 。
 获取数据 get(key) - 如果关键字 (key) 存在于缓存中，则获取关键字的值（总是正数），否则返回 -1。
