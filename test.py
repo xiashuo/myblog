@@ -262,15 +262,30 @@ class Solution:
     '''
 
     def IsBalanced_Solution(self, pRoot):
-        return False if self.get_tree_depth(pRoot)==-1 else True
+        return False if self.get_tree_depth(pRoot) == -1 else True
+
     def get_tree_depth(self, root):
         if not root:
             return 0
-        left_depth= self.get_tree_depth(root.left)
-        right_depth= self.get_tree_depth(root.right)
-        if left_depth==-1 or right_depth==-1:
+        left_depth = self.get_tree_depth(root.left)
+        right_depth = self.get_tree_depth(root.right)
+        if left_depth == -1 or right_depth == -1:
             return -1
-        return max(left_depth,right_depth)+1 if abs(left_depth-right_depth)<=1 else -1
+        return max(left_depth, right_depth) + 1 if abs(left_depth - right_depth) <= 1 else -1
+
+    '''
+    一个整型数组里除了两个数字之外，其他的数字都出现了两次。请写程序找出这两个只出现一次的数字。
+    '''
+
+    def FindNumsAppearOnce(self, array):
+        dict_count = {}
+        results = []
+        for val in array:
+            dict_count[val] = dict_count.get(val, 0) + 1
+        for k,v in dict_count.items():
+            if v == 1:
+                results.append(k)
+        return results
 
 
 '''
@@ -427,4 +442,4 @@ if __name__ == '__main__':
     #      268, 142, 463, 221, 882, 576, 604, 739, 288, 569, 256, 936, 275, 401, 497, 82, 935, 983, 583, 523, 697, 478,
     #      147, 795, 380, 973, 958, 115, 773, 870, 259, 655, 446, 863, 735, 784, 3, 671, 433, 630, 425, 930, 64, 266, 235,
     #      187, 284, 665, 874, 80, 45, 848, 38, 811, 267, 575]))
-    print(False+1)
+    print(so.FindNumsAppearOnce([1,2,1,2,4,4,5,7]))
