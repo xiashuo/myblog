@@ -9,8 +9,24 @@ body {
     margin: 0;
     padding: 0;
 }
-blockquote{
-  background-color: rgba(35,35,35,0.5);
+
+blockquote {
+    background-color: rgba(35, 35, 35, 0.5);
+}
+
+table {
+    text-align: center;
+}
+
+table td, table th {
+    border: 1px solid #007900;
+    color: #C7894F;
+    height: 30px;
+}
+
+table thead th {
+    background-color: rgba(35, 35, 35, 0.8);
+    width: 100px;
 }
 
 #cvs {
@@ -66,9 +82,11 @@ blockquote{
 .header #blog-nav #navigation .blog-nav li a {
     color: #C7894F;
 }
-.header #blog-nav #navigation .sform .form-group{
+
+.header #blog-nav #navigation .sform .form-group {
     width: 167px;
 }
+
 .header #blog-nav #navigation .sform .search {
     background-color: rgba(28, 28, 28, 0);
     border: none;
@@ -95,16 +113,19 @@ blockquote{
     color: #D1D3D5;
 }
 
-.modal-content{
-  background-color: rgba(28,28,28,0.7);
+.modal-content {
+    background-color: rgba(28, 28, 28, 0.7);
 }
-.modal-header{
-  border-bottom: 1px solid #C7894F;
-  color: #D1D3D5;
+
+.modal-header {
+    border-bottom: 1px solid #C7894F;
+    color: #D1D3D5;
 }
-.modal-content .modal-body .search-list .list-group-item{
-  background-color: rgba(28,28,28,0.7);
+
+.modal-content .modal-body .search-list .list-group-item {
+    background-color: rgba(28, 28, 28, 0.7);
 }
+
 .main-wrapper .b_data {
     background: #1E2128;
 }
@@ -250,7 +271,8 @@ blockquote{
 .hide {
     display: none;
 }
-.author,.time{
+
+.author, .time {
     color: #007900;
 }
 
@@ -292,7 +314,7 @@ blockquote{
     right: 45px;
     display: inline-block;
     text-align: left;
-    background-color: rgba(35,35,35,0.7);
+    background-color: rgba(35, 35, 35, 0.7);
     padding: 10px 20px;
     border-radius: 3px;
     filter: alpha(Opacity=90);

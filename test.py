@@ -415,7 +415,6 @@ def merge_sorted(list_target):
 
     return list_merged
 
-
 if __name__ == '__main__':
     # node1 = ListNode(1)
     # node2 = ListNode(2)
