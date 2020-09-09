@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="db86a571-e9e4-4e24-b040-2aad7ff4bfc2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/articles/算法/算法之构建乘积数组.md" beforeDir="false" afterPath="$PROJECT_DIR$/articles/算法/算法之构建乘积数组.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/test.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -337,6 +338,9 @@
       <workItem from="1598624432779" duration="2389000" />
       <workItem from="1599401561562" duration="7466000" />
       <workItem from="1599482688130" duration="5099000" />
+      <workItem from="1599576406720" duration="20000" />
+      <workItem from="1599579039331" duration="366000" />
+      <workItem from="1599652142294" duration="2552000" />
     </task>
     <task id="LOCAL-00001" summary="迁移了一部分文章，并修改了部分代码">
       <created>1582722217033</created>
