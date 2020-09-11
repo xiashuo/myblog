@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="db86a571-e9e4-4e24-b040-2aad7ff4bfc2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/articles/算法/算法之正则表达式匹配.md" beforeDir="false" afterPath="$PROJECT_DIR$/articles/算法/算法之正则表达式匹配.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/test.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +44,7 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="JupyterTrust" id="85e91886-0d68-474c-b21c-008eb07ee0f0" />
+  <component name="JupyterTrust" id="a10ff554-cded-4280-becf-1752c025c2c7" />
   <component name="ProjectId" id="1YIulO575fHSRmgyFweeRinnhtB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -79,7 +80,7 @@
       <recent name="D:\programing\PythonProjects\MyBlog\articles" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.youdao">
     <configuration name="exercise-client" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="suiyan" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -146,28 +147,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="tcp_sever" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="suiyan" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tcp_sever.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="suiyan" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -190,13 +169,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="youdao" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="suiyan" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/youdao.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.youdao" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.exercise-client" />
         <item itemvalue="Python.exerclse-server" />
         <item itemvalue="Python.tcp_client" />
-        <item itemvalue="Python.tcp_sever" />
       </list>
     </recent_temporary>
   </component>
@@ -389,25 +390,25 @@
     </state>
     <state x="499" y="111" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1591883059110" />
     <state x="624" y="140" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1593509051293" />
-    <state width="1876" height="203" key="GridCell.Tab.0.bottom" timestamp="1599816130128">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1483" height="472" key="GridCell.Tab.0.bottom" timestamp="1599825707965">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="202" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599489152644" />
+    <state width="1483" height="472" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599825707965" />
     <state width="1876" height="203" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1599816130128" />
-    <state width="1876" height="203" key="GridCell.Tab.0.center" timestamp="1599816130128">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1483" height="472" key="GridCell.Tab.0.center" timestamp="1599825707965">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="202" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599489152644" />
+    <state width="1483" height="472" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599825707965" />
     <state width="1876" height="203" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1599816130128" />
-    <state width="1876" height="203" key="GridCell.Tab.0.left" timestamp="1599816130128">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1483" height="472" key="GridCell.Tab.0.left" timestamp="1599825707964">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="202" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599489152644" />
+    <state width="1483" height="472" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599825707964" />
     <state width="1876" height="203" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1599816130128" />
-    <state width="1876" height="203" key="GridCell.Tab.0.right" timestamp="1599816130128">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1483" height="472" key="GridCell.Tab.0.right" timestamp="1599825707965">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="202" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599489152644" />
+    <state width="1483" height="472" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599825707965" />
     <state width="1876" height="203" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1599816130128" />
     <state width="1876" height="203" key="GridCell.Tab.1.bottom" timestamp="1599816130129">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -472,6 +473,7 @@
     <SUITE FILE_PATH="coverage/myblog$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1593509235633" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/suiyan$z.coverage" NAME="z Coverage Results" MODIFIED="1582689419747" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/myblog$test.coverage" NAME="test Coverage Results" MODIFIED="1598615953657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/myblog$youdao.coverage" NAME="youdao Coverage Results" MODIFIED="1599825699605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/myblog$exerclse_server.coverage" NAME="exerclse-server Coverage Results" MODIFIED="1594730135863" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/myblog$exercise_client.coverage" NAME="exercise-client Coverage Results" MODIFIED="1594730143892" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/myblog$z.coverage" NAME="z Coverage Results" MODIFIED="1594311950395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
