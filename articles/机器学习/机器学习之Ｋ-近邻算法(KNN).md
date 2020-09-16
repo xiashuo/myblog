@@ -9,11 +9,13 @@
 ## 算法描述 ##
 　　它的工作原理是：存在一个样本数据集合，也称作训练样本集，并且样本集中每个数据都存在标签，即我们知道样本集中每一数据与所属分类的对应关系。输入没有标签的新数据后，将新数据的每个特征与样本集中数据对应的特征进行比较，然后算法提取样本集中特征最相似数据（最近邻）的分类标签。一般来说，我们只选择样本数据集中前k个最相似的数据，这就是k-近邻算法中k的出处，通常k是不大于20的整数。最后，选择k个最相似数据中出现次数最多的分类，作为新数据的分类。
 ## 导入数据 ##
-	 from numpy import *
-	 def createDataSet():
-	     dataSet=array([[1,1],[1,0],[3,3],[3,4]])
-	     labels=['A','A','B','B']
-	     return dataSet,labels
+```python
+ from numpy import *
+ def createDataSet():
+     dataSet=array([[1,1],[1,0],[3,3],[3,4]])
+     labels=['A','A','B','B']
+     return dataSet,labels
+```
 
 　　这里创建4组数据，每组数据有两个我们已知的属性或者特征值。dateSet矩阵每行包含一个
 不同的数据。向量labels包含了每个数据点的标签信息， labels包含的元素个数等于dateSet矩阵行数。
@@ -29,47 +31,45 @@
 5. 返回前k个点出现频率最高的类别作为当前点的预测分类。
 
 ### 算法实现 ###
-	import operator
-	def classify(inX, dataSet, labels, k):
-	    dataSetSize = dataSet.shape[0] # 数据集大小
-	    # 计算距离
-	    diffMat = tile(inX, (dataSetSize, 1)) - dataSet 
-	    sqDiffMat = diffMat**2
-	    sqDistances = sqDiffMat.sum(axis=1) #按行相加
-	    distances = sqDistances**0.5
-	    # 按距离排序
-	    sortedDistIndicies = distances.argsort()
-	    # 统计前k个点所属的类别
-	    classCount = {}
-	    for i in range(k):
-	        votaIlabel = labels[sortedDistIndicies[i]]
-	        classCount[votaIlabel] = classCount.get(votaIlabel, 0) + 1
-	    sortedClassCount = sorted(classCount.iteritems(), key=operator.itemgetter(1), reverse=True)
-	    # 返回前k个点中频率最高的类别
-	    return sortedClassCount[0][0]
+```python
+import operator
+def classify(inX, dataSet, labels, k):
+    dataSetSize = dataSet.shape[0] # 数据集大小
+    # 计算距离
+    diffMat = tile(inX, (dataSetSize, 1)) - dataSet 
+    sqDiffMat = diffMat**2
+    sqDistances = sqDiffMat.sum(axis=1) #按行相加
+    distances = sqDistances**0.5
+    # 按距离排序
+    sortedDistIndicies = distances.argsort()
+    # 统计前k个点所属的类别
+    classCount = {}
+    for i in range(k):
+        votaIlabel = labels[sortedDistIndicies[i]]
+        classCount[votaIlabel] = classCount.get(votaIlabel, 0) + 1
+    sortedClassCount = sorted(classCount.iteritems(), key=operator.itemgetter(1), reverse=True)
+    # 返回前k个点中频率最高的类别
+    return sortedClassCount[0][0]
+```
 
-　　classify()函数有4个输入参数：用于分类的输入向量是inX，输入的训练样本集为dataSet，
-标签向量为labels，最后的参数k表示用于选择最近邻居的数目，其中标签向量的元素数目和矩
-阵dataSet的行数相同。使用欧氏距离公式，计算两个向量点xA和xB之间的距离。
-　　
+　　classify()函数有4个输入参数：用于分类的输入向量是inX，输入的训练样本集为dataSet，标签向量为labels，最后的参数k表示用于选择最近邻居的数目，其中标签向量的元素数目和矩阵dataSet的行数相同。使用欧氏距离公式，计算两个向量点xA和xB之间的距离。
 
-　　计算完所有点之间的距离后，可以对数据按照从小到大的次序排序。然后，确定前k个距离
-最小元素所在的主要分类 ，输入k总是正整数；最后，将classCount字典分解为元组列表，然后
-使用程序第二行导入运算符模块的itemgetter方法，按照第二个元素的次序对元组进行排序 。
-此处的排序为逆序，即按照从最大到最小次序排序，最后返回发生频率最高的元素标签。
+　　计算完所有点之间的距离后，可以对数据按照从小到大的次序排序。然后，确定前k个距离最小元素所在的主要分类 ，输入k总是正整数；最后，将classCount字典分解为元组列表，然后使用程序第二行导入运算符模块的itemgetter方法，按照第二个元素的次序对元组进行排序 。此处的排序为逆序，即按照从最大到最小次序排序，最后返回发生频率最高的元素标签。
 
 ### 运行结果 ###
-	if __name__=="__main__":
-	    data_set,labels=createDataSet()
-	    input=array([2,2])
-	    output_label=knn_classify(input,data_set,labels,3)
-	    print("标签为：",output_label)
-		
+```python
+if __name__=="__main__":
+    data_set,labels=createDataSet()
+    input=array([2,2])
+    output_label=knn_classify(input,data_set,labels,3)
+    print("标签为：",output_label)
+```
+
 输出结果应该是Ａ，大家也可以改变输入[２, ２]为其他值，测试程序的运行结果
 
 ## 相关函数学习 ##
 ### shape函数 读取矩阵的维度
-		
+
 		In [1]: from numpy import *
 		
 		In [2]: shape([2])
@@ -92,7 +92,7 @@
 		Out[10]: 3
 
 ### tile函数 将数组重复n次构成新的数组
-		
+
 		In [11]: a=[1,2,3]
 		
 		In [12]: b=tile(a,2)
@@ -163,7 +163,7 @@
 		   ...:     print (key ,dict[key])
 		   ...:     print (key + str(dict[key]))
 		   ...:
-
+	
 		Age 27
 		Age27
 		Name Zara

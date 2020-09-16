@@ -24,25 +24,29 @@
 
 在将上述特征数据输入到分类器之前，必须将待处理数据的格式改变为分类器可以接受的格式。创建名为load_data 的函数，以此来处理输入格式问题。该函数的输入为文件名字符串，输出为训练样本矩阵和类标签向量。
 
-	def load_data(filename):
-    fr=open(filename)
-    arrayLines=fr.readlines()
-    nums=len(arrayLines)
-    dataMat=np.zeros([nums,3])
-    labels=np.zeros(nums)
-    index=0
-    for line in arrayLines:
-        line_list=line.strip()
-        line_list=line_list.split('\t')
-        dataMat[index]=line_list[0:3]
-        labels[index]=line_list[-1]
-        index+=1
-    return dataMat,labels
+```python
+def load_data(filename):
+fr=open(filename)
+arrayLines=fr.readlines()
+nums=len(arrayLines)
+dataMat=np.zeros([nums,3])
+labels=np.zeros(nums)
+index=0
+for line in arrayLines:
+    line_list=line.strip()
+    line_list=line_list.split('\t')
+    dataMat[index]=line_list[0:3]
+    labels[index]=line_list[-1]
+    index+=1
+return dataMat,labels
+```
 执行 load_data 函数，创建样本矩阵和类标签向量。
 
-	dataMat,labels=load_data('datingTestSet.txt')
-	print(dataMat)
-	print(labels[:20])
+```python
+dataMat,labels=load_data('datingTestSet.txt')
+print(dataMat)
+print(labels[:20])
+```
 结果：
 
 	[[  4.09200000e+04   8.32697600e+00   9.53952000e-01]
@@ -54,11 +58,13 @@
 	 [  4.37570000e+04   7.88260100e+00   1.33244600e+00]]
 	[ 3.  2.  1.  1.  1.  1.  3.  3.  1.  3.  1.  1.  2.  1.  1.  1.  1.  1. 2.  3.]
 ### 分析数据：使用 Matplotlib 创建散点图
-	import matplotlib.pyplot as plt
-	fig=plt.figure()
-	ax=fig.add_subplot(111)
-	ax.scatter(dataMat[:,0],dataMat[:,1],15.0*labels,15.0*labels)
-	plt.show()
+```python
+import matplotlib.pyplot as plt
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(dataMat[:,0],dataMat[:,1],15.0*labels,15.0*labels)
+plt.show()
+```
 输出效果如图所示。散点图使用 dataMat 矩阵的第1列、第2列数据，分别表示特征值“每年获取的飞行常客里程数”和“玩视频游戏所耗时间百分比”。图中清晰地标识了三个不同的样本分类区域，具有不同爱好的人其类别区域也不同。 
 
 ![](assets/images/2018/01/piauas17dujr1q222p2p21vgv3.png)
@@ -67,18 +73,22 @@
 $$xNormed = \frac{x - min}{max - min}$$  
 min表示最小值，max表示最大值，分别对数据矩阵的每一列即每个特征做上述处理，在python中的实现如下：
 
-	def autoNorm(dataSet):
-	    minVals=dataSet.min(0)
-	    maxVals=dataSet.max(0)
-	    m=len(dataSet)
-	    data_norm=np.zeros(np.shape(dataSet))
-	    data_norm=dataSet-np.tile(minVals,(m,1))
-	    data_norm=data_norm/np.tile(maxVals-minVals,(m,1))
-	    return data_norm
+```python
+def autoNorm(dataSet):
+    minVals=dataSet.min(0)
+    maxVals=dataSet.max(0)
+    m=len(dataSet)
+    data_norm=np.zeros(np.shape(dataSet))
+    data_norm=dataSet-np.tile(minVals,(m,1))
+    data_norm=data_norm/np.tile(maxVals-minVals,(m,1))
+    return data_norm
+```
 执行 autoNorm 函数对原始数据进行归一化处理
 
-	dataSet=autoNorm(dataMat)
-	print(dataSet)
+```python
+dataSet=autoNorm(dataMat)
+print(dataSet)
+```
 结果：
 
 	[[ 0.44832535  0.39805139  0.56233353]
@@ -92,33 +102,37 @@ min表示最小值，max表示最大值，分别对数据矩阵的每一列即�
 ### 测试算法：作为完整程序验证分类器
 之前已经写了KNN算法的实现，这里直接给出：
 
-	import operator
-	def KNN(intX,dataSet,labels,k=3):
-	    m=len(dataSet)
-	    distances=dataSet-np.tile(intX,[m,1])
-	    distances=np.square(distances)
-	    distances=np.sqrt(distances.sum(1))
-	    index_sorted=np.argsort(distances)
-	    result_list={}
-	    for i in range(k):
-	        vote_label=labels[index_sorted[i]]
-	        result_list[vote_label]=result_list.get(vote_label,0)+1
-	    result_list=sorted(result_list.items(),key=operator.itemgetter(1),reverse=True)
-	    predict=result_list[0][0]
-	    return predict
+```python
+import operator
+def KNN(intX,dataSet,labels,k=3):
+    m=len(dataSet)
+    distances=dataSet-np.tile(intX,[m,1])
+    distances=np.square(distances)
+    distances=np.sqrt(distances.sum(1))
+    index_sorted=np.argsort(distances)
+    result_list={}
+    for i in range(k):
+        vote_label=labels[index_sorted[i]]
+        result_list[vote_label]=result_list.get(vote_label,0)+1
+    result_list=sorted(result_list.items(),key=operator.itemgetter(1),reverse=True)
+    predict=result_list[0][0]
+    return predict
+```
 执行下面的代码，对数据进行测试 ：
 
-	dev_rate=0.1
-	m=dataSet.shape[0]
-	test_num=int(dev_rate*m)
-	error_count=0.0
-	for i in range(test_num):
-	    predict=KNN(dataSet[i],dataSet[test_num:],labels[test_num:])
-	    if (predict!=labels[i]):
-	        error_count+=1
-	    print("predict %d: %d, true label: %d"%(i,predict,labels[i]))
-	error_rate=error_count/test_num
-	print("error rate is ",error_rate)
+```python
+dev_rate=0.1
+m=dataSet.shape[0]
+test_num=int(dev_rate*m)
+error_count=0.0
+for i in range(test_num):
+    predict=KNN(dataSet[i],dataSet[test_num:],labels[test_num:])
+    if (predict!=labels[i]):
+        error_count+=1
+    print("predict %d: %d, true label: %d"%(i,predict,labels[i]))
+error_rate=error_count/test_num
+print("error rate is ",error_rate)
+```
 需要说明的是，这里用了10%的样本用作测试分类器，其余的用于训练。正常情况下，测试数据应该随机选取，但是这里的数据本身就没有按照特定目的来排序，所以这里直接选取的前10%的样本作为测试不会对随机性产生影响。这里用的是分类错误率来检测分类器的性能，最终100个测试样本分类结果错误率为 5%，结果还可以。
 ## 示例2：手写数字识别系统
 这里使用的手写数字数据是纯文本格式的，数字从0到9，宽高为32*32，有效数字部分的数值为1，其余部分数值为0。例如下面这种形式就表是 0。
@@ -158,43 +172,51 @@ min表示最小值，max表示最大值，分别对数据矩阵的每一列即�
 ### 准备数据：将图像转换为测试向量 
 为了测试前面例子的分类器，需要先将上述格式的文件转换成1 * 1024的向量。先写一个读取数据，并转化为向量的函数如下：
 
-	def img_vector(filename):
-	    return_vector=np.zeros([1,1024])
-	    fr=open(filename)
-	    for i in range(32):
-	        line_vals=fr.readline()
-	        for j in range(32):
-	            return_vector[0,32*i+j]=line_vals[j]
-	    return return_vector
+```python
+def img_vector(filename):
+    return_vector=np.zeros([1,1024])
+    fr=open(filename)
+    for i in range(32):
+        line_vals=fr.readline()
+        for j in range(32):
+            return_vector[0,32*i+j]=line_vals[j]
+    return return_vector
+```
 该函数是读取单个文件的前32行，并将每行的前32个字符值存储在numpy数组中，返回的数组shape为（1，1024）。上面的函数只是针对单个文件的读取与处理，下面需要读取所有的训练和测试数据，并转换成向量形式，在load_data 函数中实现。
 
-	from os import listdir
-	def load_data(filepath):
-	    filenames=listdir(filepath)
-	    m=len(filenames)
-	    returnMat=np.zeros([m,1024])
-	    labels=[]
-	    for i in range(m):
-	        filename=filenames[i]
-	        label=filename.split('.')[0]
-	        label=label.split('_')[0]
-	        returnMat[i]=img_vector(filepath+'/'+filename)
-	        labels.append(label)
-	    return returnMat,labels    
+```python
+from os import listdir
+def load_data(filepath):
+    filenames=listdir(filepath)
+    m=len(filenames)
+    returnMat=np.zeros([m,1024])
+    labels=[]
+    for i in range(m):
+        filename=filenames[i]
+        label=filename.split('.')[0]
+        label=label.split('_')[0]
+        returnMat[i]=img_vector(filepath+'/'+filename)
+        labels.append(label)
+    return returnMat,labels    
+```
 这里的listdir可以列出给定目录的所有文件名，所有文件均以0_0,0_1这种形式命名，第一个0表示标签为0，第二个表示标签0的第一张和第二张。所以根据文件名分别读取所有样本，并获取每个样本对应的标签，转换成向量形式返回。执行上面的函数，获得训练和测试的数据，代码如下：
 
-	training_data,training_labels=load_data('digits/trainingDigits')
-	test_data,test_labels=load_data('digits/testDigits')
+```python
+training_data,training_labels=load_data('digits/trainingDigits')
+test_data,test_labels=load_data('digits/testDigits')
+```
 ### 测试算法：使用 k-近邻算法识别手写数字 
 下面通过前面的分类器来测试上面获取的数据，代码如下：
 
-	test_num=test_data.shape[0]
-	true_count=0.0
-	for i in range(test_num):
-	    predict=KNN(test_data[i],training_data,training_labels)
-	    if (predict==test_labels[i]):
-	        true_count+=1
-	#     print("predict %d: %s, true label: %s"%(i,predict,test_labels[i]))
-	accurate=true_count/test_num
-	print("accurate is ",accurate)
+```python
+test_num=test_data.shape[0]
+true_count=0.0
+for i in range(test_num):
+    predict=KNN(test_data[i],training_data,training_labels)
+    if (predict==test_labels[i]):
+        true_count+=1
+#     print("predict %d: %s, true label: %s"%(i,predict,test_labels[i]))
+accurate=true_count/test_num
+print("accurate is ",accurate)
+```
 这里使用的正确率来评价分类器的效果，即测试集中分类正确的样本除以总测试样本数，最终识别正确率大约为98.9%。
