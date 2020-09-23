@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="db86a571-e9e4-4e24-b040-2aad7ff4bfc2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/articles/算法/算法之二叉搜索树中第k小的节点.md" beforeDir="false" afterPath="$PROJECT_DIR$/articles/算法/算法之二叉搜索树中第k小的节点.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/articles/算法/算法之矩阵中的路径.md" beforeDir="false" afterPath="$PROJECT_DIR$/articles/算法/算法之矩阵中的路径.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/test.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +44,7 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="JupyterTrust" id="85e91886-0d68-474c-b21c-008eb07ee0f0" />
+  <component name="JupyterTrust" id="a10ff554-cded-4280-becf-1752c025c2c7" />
   <component name="ProjectId" id="1YIulO575fHSRmgyFweeRinnhtB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -349,6 +349,7 @@
       <workItem from="1600390594507" duration="791000" />
       <workItem from="1600394728282" duration="1297000" />
       <workItem from="1600614534336" duration="4292000" />
+      <workItem from="1600858811549" duration="5490000" />
     </task>
     <task id="LOCAL-00001" summary="迁移了一部分文章，并修改了部分代码">
       <created>1582722217033</created>
