@@ -10,7 +10,7 @@
 
   ![](images/mingw64下载版本选择.png)
 
-  根据机器架构选择最新相对应版本，这里推荐选择免安装版`x86_64-win32-sjlj`版，直接解压就能用。
+  根据机器架构选择最新相对应版本，64位系统这里推荐选择免安装版`x86_64-win32-sjlj`版，直接解压就能用。这里有[版本区别详解](https://www.pcyo.cn/linux/20181212/216.html)供参考
 
 - 将下载的压缩包中的 `mingw64` 文件夹解压到目录：`C:\\MinGW64`下。(这里解压到别的地方也可以，只要加入到系统环境变量就行，官方推荐是c盘)
 
@@ -38,19 +38,48 @@
 
   > 打包命令形如：`nuitka  [options]  xxx.py`
 
-  - 参数 `--mingw64`
+  - `--mingw64`
 
     实际上 `--mingw64`与`--msvc=MSVC`是一对孪生参数，这两个参数二选一，用于指定编译器，如果当前环境既安装了mingw64，又安装了msvc，可以使用该参数选择兼容性最好的编译器,建议使用mingw64。如果不存在上面两种编译器都存在的情况，就不需要显式设置这个参数，默认会调用系统中能用的编译器。
 
-  - 
+  -  `-o FILENAME`
 
+    指定生成的可执行文件的文件名，但是生成pyd的时候无法使用，也就是在使用`--module`的时候无法为pyd文件指定一个其他的文件名。
     
+  - `--output-dir=DIRECTORY`
+
+    指定打包好的文件存放的目录，默认为当前目录。
+    
+  - `--remove-output`
+
+    使用nuitka进行打包的过程中，会生成一个用于build的中间临时目录，若可以使用该参数，命令完成后会自动删除build目录
+    
+  - `--show-progress` 和 `--show-scons`
+
+    用来显示详细打包过程。这部分还有几个类似的参数如下：
+    
+  ```shell
+    --show-scons        Operate Scons in non-quiet mode, showing the executed
+    commands. Defaults to off.
+    --show-progress     Provide progress information and statistics. Defaults
+    to off.
+    --show-memory       Provide memory information and statistics. Defaults to
+    off.
+    --show-modules      Provide a final summary on included modules. Defaults
+    to off.
+    --verbose           Output details of actions taken, esp. in
+    optimizations. Can become a lot. Defaults to off.
+    ```
+    
+    
+
+  
 
 - **打包模块与follow import**
 
   `follow import`这部分命令参数是导入包或者模块的，这部分参数一共有五个：
 
-  ```powershell
+  ```shell
    --follow-stdlib, --recurse-stdlib
        Also descend into imported modules from standard
        library. This will increase the compilation time by a
@@ -73,5 +102,9 @@
   
   ```
 
+  这一部分参数可以说是nuitka的核心。nuitka能够根据py文件中的import语句找到所有引用的库，然后将这些库文件打包进二进制文件中。
+  
+  
+  
   
 
