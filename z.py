@@ -7,8 +7,6 @@ import json
 import datetime
 import random
 
-from fnmatch import fnmatch
-
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # 当前目录地址
 ARTICLES_DIR = os.path.join(BASE_DIR, "articles")  # 日志目录
 CONFIGJSON = 'config.json'
@@ -25,7 +23,6 @@ def create_blog_data_Json(adir):
     :return: json字符串
     '''
     data_json = []
-    data_json_str = ""
     # 当前目录下所有的文件、子目录、子目录下的文件。
     for root, dirs, files in os.walk(adir):
         # print(root)
@@ -141,22 +138,6 @@ def create_blog(title, author, pagename, tag):
     # print(getjson(str))
 
 
-def create_test(con):
-    '''
-    生成测试blog默认1000篇，放在目录suiyantest下。
-    获取.md的文章信息HTML转化成数组
-    :param con: 需要生成的文章数。
-    :return: void
-    '''
-    dir = "suiyantest"
-    for i in range(con):
-        # 随机生成一些文章数据填充，用来测试
-        title = random.choice(("打法撒发射点发斯蒂芬", "斯蒂芬阿斯蒂芬斯蒂芬", "斯蒂芬阿斯蒂芬", "斯蒂芬阿斯蒂芬", "斯蒂芬斯蒂芬阿斯蒂芬3",))
-        tag = random.choice(("Java", "JavaScript", "Python", "C++", "程序员",))
-        pagename = str(random.randint(99999, 99999999))
-        create_blog(title=title, tag=tag, author='', pagename=pagename)
-
-
 def edit_mds(dir=ARTICLES_DIR):
     count = 0
     for root, dirs, files in os.walk(dir):
@@ -164,19 +145,9 @@ def edit_mds(dir=ARTICLES_DIR):
             # 值读取.md
             file = root + '\\' + name
             if file.endswith('.md'):
-                # f1 = open(file, "r", encoding="utf-8")
-                # data = f1.read()
-                # f1.close()
-                # new_data = re.sub(r'\d*剑指offer', '算法', data)
-                # f2 = open(file, "w", encoding="utf-8")
-                # f2.write(new_data)
-                # f2.close()
-                # if data != new_data:
-                #     print(f"修改{name}成功！")
-                #     count += 1
                 new_name = re.sub(r'\d*剑指offer', '算法', file)
                 if file != new_name:
-                    os.rename(file,new_name)
+                    os.rename(file, new_name)
                     print(f"修改{file}成功！")
                     count += 1
     print("共修改{}条数据".format(count))
@@ -191,7 +162,6 @@ def main():
     parser.add_argument("-a", "--author", help="请输入文章作者，默认调用站长昵称", default='')
     parser.add_argument("-p", "--pagename", help="请输入文章地址页面名称", default='')
     parser.add_argument("-d", "--dir", help="请输入文章地址所属目录", default='')
-    parser.add_argument("-tt", "--suiyantest", help="生成测试blog,填写需要生成的数目，测试文章放在目录suiyantest下。", type=int, )
 
     args = parser.parse_args()
     if args.version:
@@ -202,9 +172,6 @@ def main():
             jsonstr = create_blog_data_Json(ARTICLES_DIR)
             write_data_json(jsonstr)
             print("blog_data.json索引文件更新完毕！")
-    elif args.suiyantest:
-        create_test(args.suiyantest)
-        print("测试文件创建完毕！")
     elif args.index:
         jsonstr = create_blog_data_Json(ARTICLES_DIR)
         write_data_json(jsonstr)
