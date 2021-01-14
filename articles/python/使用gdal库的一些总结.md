@@ -37,9 +37,222 @@ OGR包括如下几部分：
 - Data Source：类OGRDataSource是一个抽象基类，表示含有OGRLayer对象的一个文件或一个数据库。
 - Drivers：类OGRSFDriver对应于每一个所支持的矢量文件格式。类OGRSFDriver由类OGRSFDriverRegistrar来注册和管理。
 
-## 使用gdal读取图片
+## 使用gdal读取图片（读取栅格数据）
 
+GDAL原生支持超过100种栅格数据类型，涵盖所有主流GIS与RS数据格式，包括
 
+- ArcInfo grids, ArcSDE raster, Imagine, Idrisi, ENVI, GRASS, GeoTIFF
+- HDF4, HDF5
+- USGS DOQ, USGS DEM
+- ECW, MrSID
+- TIFF, JPEG, JPEG2000, PNG, GIF, BMP
+
+完整的支持列表可以参考： [http://www.gdal.org/formats_list.html](http://www.gdal.org/formats_list.html)
+
+### gdal.Open()
+
+```python
+from osgeo import gdal
+
+ds = gdal.Open('test.tif')
+if not ds:
+    print('读取错误')
+print(data_set)
+```
+
+`<osgeo.gdal.Dataset; proxy of <Swig Object of type 'GDALDatasetShadow *' at 0x00000227A589E600> >`
+
+使用gdal.Open()函数读取一个图片，返回的是一个Dataset对象，该函数内部加入了异常机制，读取错误图片或者路径也不会报错，只会返回一个None。
+
+### 读取栅格数据集的x方向像素数，y方向像素数，和波段数
+
+```python
+cols = ds.RasterXSize # 列
+rows = ds.RasterYSize # 行
+bands = ds.RasterCount # 波段
+print(cols,rows,bands) 
+```
+
+`2503 1758 3`
+
+### 读取地理坐标参考信息
+
+```python
+geo_transform = ds.GetGeoTransform()
+print(geo_transform)
+```
+
+`(115.4218883553212, 5.364418029785156e-06, 0.0, 29.90889690785206, 0.0, -5.364418029785156e-06)`
+
+返回的geo_transform是一个长度为6的元组（tuble），存储着栅格数据集的地理坐标信息
+
+- geo_transform[0]: 左上角x坐标
+- geo_transform[1]: 东西方向上的像素分辨率/像素宽度
+- geo_transform[2]:  行旋转（通常为零）
+- geo_transform[3]:  左上角y坐标
+- geo_transform[4]:  列旋转（通常为零）
+- geo_transform[5]:  南北方向上的像素分辨率/像素高度（北上图像为负值）
+
+### 将栅格数据转换成数组
+
+```python
+img_array = ds.ReadAsArray(0,0,cols,rows)
+print(f'img_array类型：{type(img_array)}')
+print(f'shape：{img_array.shape}')
+```
+
+`img_array类型：<class 'numpy.ndarray'>
+shape：(3, 1758, 2503)`
+
+`ReadAsArray(xoff, yoff, xsize, ysize)`函数有4个参数，表示读取从(xoff,yoff)开始，大小为(xsize,ysize)的矩阵。所以要读取整张图片，就是使用参数(0,0,cols,rows)。
+
+**注意不要搞反了。数学中的矩阵是[row,col]，而这里恰恰相反！这里面row对应y轴，col对应x轴。并且这里返回的图片数组波段数在第一个维度，这也是与其他图片库不一样的地方。**
+
+## 用OGR读写矢量数据
+
+> OGR矢量库：简单的矢量数据读写，是GDAL的一部分
+>
+> GDAL地理空间数据抽象库： a) 读写栅格数据 b) ArcGIS也是基于GDAL开发的 c) C++库，但是可以用python调用
+
+### 载入数据驱动
+
+要读取某种类型的数据，必须要先载入数据驱动，也就是初始化一个对象，让它“知道”某种数据结构。
+
+```python
+import ogr
+driver = ogr.GetDriverByName(‘ESRI Shapefile’)
+```
+
+### 打开shape文件
+
+数据驱动driver的open()方法返回一个数据源对象
+
+```python
+open(<filename>, <update>)
+```
+
+其中update为0是只读，为1是可写
+
+```python
+from osgeo import ogr
+
+driver = ogr.GetDriverByName('ESRI Shapefile') # 这里驱动名字不区分大小写
+datasource = driver.Open('test2.shape/test2.shp',0)
+if not datasource:
+    print('无法读取')
+print(datasource)
+```
+
+`<osgeo.ogr.DataSource; proxy of <Swig Object of type 'OGRDataSourceShadow *' at 0x00000227ABC49A20> >`
+
+### 读取数据层
+
+通过了解可以知道，矢量数据的基本结构一般是：一个layer数据层，下面是由多个feature组成的features，每个级别下都有一些属性值。一般情况下只有一个layer层。
+
+```python
+layer = datasource.GetLayer(0) # 这里参数是层的索引，表示第0个数据层，不填默认值也是0
+print(layer)
+```
+
+`<osgeo.ogr.Layer; proxy of <Swig Object of type 'OGRLayerShadow *' at 0x00000227ABC49B10> >`
+
+**获取feature个数**
+
+```python
+n = layer.GetFeatureCount()
+print(n)
+```
+
+`1700`
+
+**读出上下左右边界**
+
+```python
+extent = layer.GetExtent()
+print('extent:', extent)
+```
+
+`extent: (0.0, 2503.0, 0.0, 1758.0)`
+
+**读取某一要素feature**
+
+```python
+feat = layer.GetFeature(41) # 获取第41个要素
+print(feat.GetField('class')) # 获取‘class’属性的值，这里也可以用索引
+print(feat.GetField(0)) # 获取第一个属性的值，这里只有一个属性'class'
+```
+
+**遍历所有要素feature**
+
+```python
+feat = layer.GetNextFeature() # 读取下一个
+while feat:
+    feat = layer.GetNextFeature()
+    ...
+layer.ResetReading() # 复位
+```
+
+layer其实也是一个可迭代对象，可以直接用for循环遍历
+
+```python
+for feat in layer:
+    ...
+```
+
+### 释放内存
+
+```python
+feature.Destroy()
+dataSource.Destroy()
+```
+
+### 写入shape文件
+
+**创建新文件**
+
+```python
+driver.CreateDataSource(<filename>)
+```
+
+**但是这个文件不能已经存在了，否则会出错，可以如下处理就不会报错了：**
+
+```python
+if os.path.exists(<filename>):
+    driver.DeleteDataSource(<filename>)
+driver.CreateDataSource(<filename>)
+```
+
+这里的filename其实最终是生成一个文件夹，文件夹名是filename
+
+**添加字段**
+
+```python
+fieldDefn1 = ogr.FieldDefn('id', ogr.OFTInteger) # 添加id字段
+layer.CreateField(fieldDefn1)
+fieldDefn2 = ogr.FieldDefn('class', ogr.OFTString) # 添加class字段
+layer.CreateField(fieldDefn2)
+```
+
+添加字段只能在layer里面加，需要是ogr.FieldDefn类型，字段的数据类型可以有多种，这里只用了整形和字符串2种
+
+**添加feature**
+
+```python
+featureDefn = layer.GetLayerDefn() # layer中读取相应的feature类型
+feature = ogr.Feature(featureDefn) # 创建feature
+feature.SetGeometry(point) # 设定几何形状
+feature.SetField('id', 0) 
+feature.SetField('class', 'background')
+layer.CreateFeature(feature) # 将feature写入layer
+```
+
+添加一个新的feature，首先得完成上一步，把字段field都添加齐了
+
+然后从layer中读取相应的feature类型，并创建feature
+
+然后设定几何形状，设定某字段的数值
+
+最后将feature写入layer
 
 
 
