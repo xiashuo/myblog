@@ -254,5 +254,80 @@ layer.CreateFeature(feature) # 将feature写入layer
 
 最后将feature写入layer
 
+## 项目中的一些例子
 
+### 栅格数据转shapefile
+
+```python
+    def mask2shape(self, mask, class_name, geo_transform, projection_ref, shape_path):
+        """
+        mask转shape文件
+        :param mask: mask数组darray
+        :param output_dir: 输出目录
+        :return:
+        """
+        mask = mask.astype(np.int16)
+        row = mask.shape[0]  # 行数
+        columns = mask.shape[1]  # 列数
+        dim = 1  # 通道数
+        # 创建驱动
+        driver = gdal.GetDriverByName('MEM') # 创建内存数据，不会生成文件
+        # 创建文件
+        img_name, img_type = self.filename.split('.')
+        dst_ds = driver.Create('', columns, row, dim) # 文件名为空，不会生成文件，配合上面'MEM'使用
+        # 设置几何信息
+        dst_ds.SetGeoTransform(geo_transform)
+        dst_ds.SetProjection(projection_ref)
+        # 将数组写入
+        dst_ds.GetRasterBand(1).WriteArray(mask)
+        # 转shape
+        srcband = dst_ds.GetRasterBand(1)
+        # maskband = srcband.GetMaskBand()
+        drv = ogr.GetDriverByName('ESRI Shapefile')
+        if os.path.exists(shape_path):
+            drv.DeleteDataSource(shape_path)
+        dst_shpDs = drv.CreateDataSource(shape_path)
+        srs = None
+        dst_layername = img_name
+        dst_layer = dst_shpDs.CreateLayer(dst_layername, srs=srs)
+        fd = ogr.FieldDefn('class_id', ogr.OFTInteger)
+        dst_layer.CreateField(fd)
+        fd2 = ogr.FieldDefn('class_name', ogr.OFTString)
+        dst_layer.CreateField(fd2)
+        dst_field = 0
+        prog_func = 0
+        options = []
+        # 参数输入栅格图像波段\掩码图像波段、矢量化后的矢量图层、需要将DN值写入矢量字段的索引、算法选项、进度条回调函数、进度条参数
+        gdal.Polygonize(srcband, None, dst_layer, dst_field, options, callback=prog_func) # 自动寻找矢量多边形要素，并将像素值赋值给第0个字段'class_id'
+        for feature in dst_layer: # 遍历所有要素，给'class_name'赋值
+            class_id = feature.GetField('class_id')
+            if class_id == 0:
+                dst_layer.DeleteFeature(feature.GetFID())
+                continue
+            feature.SetField('class_name', class_name)
+            dst_layer.SetFeature(feature)
+        dst_shpDs.Destroy()
+```
+
+### 栅格数据转json文件
+
+```python
+def mask2json(mask):
+    memdrv = gdal.GetDriverByName('MEM')
+    src_ds = memdrv.Create('', mask.shape[1], mask.shape[0], 1)
+    geom = [0.0, 1.0, 0.0, 0.0, 0.0, 1.0] # 坐标系从左上角为起点
+    src_ds.SetGeoTransform(geom)
+    band = src_ds.GetRasterBand(1)
+    band.WriteArray(mask)
+    dst_layername = "results"
+    drv = ogr.GetDriverByName("geojson")
+    dst_ds = drv.CreateDataSource('results.json')
+    dst_layer = dst_ds.CreateLayer(dst_layername, srs=None)
+    fieldName = 'class_id'
+    fd = ogr.FieldDefn(fieldName, ogr.OFTInteger)
+    dst_layer.CreateField(fd)
+    dst_field = 0
+    gdal.Polygonize(band, None, dst_layer, dst_field, [], callback=None)
+    dst_ds.Destroy()
+```
 
