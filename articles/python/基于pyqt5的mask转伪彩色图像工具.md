@@ -4,6 +4,7 @@
     <span class="time">2021-01-11 15:08</span>
     <span><a href="tags.html?t=python" class="tag">python</a></span>
     </div><br/>
+    
 > 由于软件标注数据导出的mask标签(索引值图像，肉眼看上去就是全黑)，不方便检测标注准确性，还有分割模型的输出也是类似的索引值，为了方便显示，抽空写了个带界面的转换工具，方便数据组使用。工具是用pyqt5做的，然后通过nuitka打包成exe
 
 ## 使用QTDesigner工具设计界面
