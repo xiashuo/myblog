@@ -5,7 +5,7 @@ import os
 import re
 import json
 import datetime
-import random
+from urllib.parse import quote
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # 当前目录地址
 ARTICLES_DIR = os.path.join(BASE_DIR, "articles")  # 日志目录
@@ -119,6 +119,7 @@ def create_blog(title, author, pagename, tag):
         os.makedirs(file_dir)
 
     article_url = '\\' + dir + '\\' + pagename
+    article_url = quote(article_url)
     # print(blogpath)
     bloghtml = '<div class="blog-article">\n\
     <h1><a href="p.html?p=' + article_url + '" class="title">' + title + '</a></h1>\n\
@@ -135,7 +136,6 @@ def create_blog(title, author, pagename, tag):
             f.write(bloghtml)
         print('blog文章.md创建成功！')
         return True
-    # print(getjson(str))
 
 
 def edit_mds(dir=ARTICLES_DIR):
