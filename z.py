@@ -141,10 +141,10 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-v", "--version", help="查询程序版本", action="store_true")
     parser.add_argument("-i", "--index", help="更新索引blog数据json", action="store_true")
-    parser.add_argument("-n", "--newblog", default='使用pyinstaller打包多文件和目录的python项目', help="创建新日志，请输入标题（必填）。", )
-    parser.add_argument("-t", "--tag", default='python', help="请输入blog的标签TAG")
+    parser.add_argument("-n", "--newblog", default='UOS系统(arm64)下从源码编译安装qt5.15.2', help="创建新日志，请输入标题（必填）。", )
+    parser.add_argument("-t", "--tag", default='Linux', help="请输入blog的标签TAG")
     parser.add_argument("-a", "--author", help="请输入文章作者，默认调用站长昵称", default='xiashuobad')
-    parser.add_argument("-p", "--pagename", help="请输入文章地址页面名称", default='使用pyinstaller打包多文件和目录的python项目')
+    parser.add_argument("-p", "--pagename", help="请输入文章地址页面名称", default='UOS系统(arm64)下从源码编译安装qt5.15.2')
     # parser.add_argument("-d", "--dir", help="请输入文章地址所属目录", default='')
 
     args = parser.parse_args()
